@@ -13,17 +13,21 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // {
-    //   resolve: 'gatsby-plugin-prefetch-google-fonts',
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: 'IBM Plex Sans',
-    //         subsets: ['300', '400', '500'],
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'IBM Plex Sans',
+            variants: ['300', '400', '500'],
+          },
+          {
+            family: 'IBM Plex Serif',
+            variants: ['300', '400', '500'],
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -44,7 +48,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-netlify',
   ],
 };
