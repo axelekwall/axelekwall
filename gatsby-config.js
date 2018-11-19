@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'mini_ gatsby starter',
+    title: 'axel ekwall',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -11,13 +10,37 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/blog`,
+        name: 'markdown-pages',
+      },
+    },
+    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'IBM Plex Sans',
+            variants: ['300', '400', '500'],
+          },
+          {
+            family: 'IBM Plex Serif',
+            variants: ['300', '400', '500'],
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'm_ starter',
-        short_name: 'starter',
+        name: 'axel ekwall',
+        short_name: 'a_e',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#fff',
@@ -33,5 +56,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-netlify',
   ],
-}
+};
