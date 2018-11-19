@@ -22,21 +22,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'IBM Plex Sans',
-            variants: ['300', '400', '500'],
-          },
-          {
-            family: 'IBM Plex Serif',
-            variants: ['300', '400', '500'],
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'axel ekwall',
