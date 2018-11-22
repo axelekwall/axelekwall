@@ -13,15 +13,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blog-assets',
-        path: `${__dirname}/static/assets`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/blog`,
         name: 'markdown-pages',
+        path: `${__dirname}/src/pages/blog`,
       },
     },
     'gatsby-transformer-remark',
@@ -48,7 +41,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify-cms',
-    'gatsby-plugin-netlify',
   ],
 };
