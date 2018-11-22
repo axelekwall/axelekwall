@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "axel_ekwall",
+  "alias": ["axelekwall.se", "www.axelekwall.se"],
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" }
+  ]
+}

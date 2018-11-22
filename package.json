@@ -30,7 +30,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "now-build": "npm run build && cp -r public/ dist/"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
