@@ -1,0 +1,28 @@
+{
+  "educations": [
+    {
+      "title": "Media Technology and Engineering",
+      "school": "kth",
+      "years": "2014 - present"
+    },
+    {
+      "title": "Human Technology Interaction",
+      "school": "tue",
+      "years": "2018"
+    }
+  ],
+  "schools": {
+    "kth": {
+      "name": "KTH Royal Institute of Technology",
+      "url": "https://kth.se"
+    },
+    "tue": {
+      "name": "TU/e Eindhoven University of Technology",
+      "url": "https://tue.nl"
+    },
+    "ucsd": {
+      "name": "UCSD University of California San Diego",
+      "url": "https://ucsd.edu"
+    }
+  }
+}
