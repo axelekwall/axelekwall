@@ -1,0 +1,30 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e9e3e6;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    max-width: 900px;
+    justify-content: center;
+}
+
+.titleRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-self: flex-start;
+}
+
+.bioRow {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-self: flex-end;
+}

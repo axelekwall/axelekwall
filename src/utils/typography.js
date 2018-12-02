@@ -1,8 +1,12 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-  baseFontSize: '18px',
-  baseLineHeight: 1.666,
+  title: 'axelekwall',
+  baseFontSize: '16px',
+  baseLineHeight: 1.5,
+  headerWeight: 500,
+  bodyWeight: 400,
+  boldWeight: 500,
   headerFontFamily: ['IBM Plex Sans', 'Arial', 'sans-serif'],
   bodyFontFamily: ['IBM Plex Serif', 'Georgia', 'serif'],
   googleFonts: [
@@ -14,7 +18,14 @@ const typography = new Typography({
       name: 'IBM Plex Serif',
       styles: ['300', '400', '500'],
     },
-  ]
+  ],
+  overrideStyles: ({ rhythm, scale }, options) => ({
+    'h1.big_title': scale(2.5),
+    'p.front_page_bio': {
+      ...scale(1/2),
+      fontFamily: options.headerFontFamily.join(','),
+    },
+  }),
 });
 
 export default typography;
