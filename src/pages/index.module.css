@@ -1,5 +1,4 @@
 @import "../utils/base.css";
-// TODO: Move variables such as colors etc. to base.css
 
 .root {
     display: flex;
