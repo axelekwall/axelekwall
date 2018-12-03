@@ -1,0 +1,48 @@
+@import "../utils/base.css";
+
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--main-color);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-width: var(--content-width);
+    justify-content: flex-start;
+    margin-top: 20vh;
+}
+
+.textRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-self: flex-start;
+    &:nth-child(2) {
+        width: 70%;
+        align-self: center;
+    }
+}
+
+@media (--tablet) {
+    .textRow:nth-child(2) {
+        width: 90%;
+        align-self: flex-end;
+    }
+}
+
+@media (--phone) {
+    .content {
+        margin-top: 10vh;
+    }
+
+    .textRow:nth-child(2) {
+        width: 100%;
+        align-self: flex-start;
+    }
+}

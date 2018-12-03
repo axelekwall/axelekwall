@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'axel ekwall',
+    title: 'axel_ekwall',
   },
   plugins: [
     {
@@ -21,6 +21,18 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    // PostCSS Setup
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('postcss-preset-env')({
+            stage: 0,
+            importFrom: './src/utils/customMedia.css',
+          }),
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
