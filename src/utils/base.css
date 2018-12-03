@@ -3,7 +3,3 @@
     --main-color: #e9e3e6;
     --content-width: 900px;
 }
-
-/* Shared custom media queries */
-@custom-media --phone (max-width: 500px);
-@custom-media --tablet (max-width: 900px);
