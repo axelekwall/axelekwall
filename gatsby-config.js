@@ -27,7 +27,7 @@ module.exports = {
       options: {
         postCssPlugins: [
           require('postcss-preset-env')({ stage: 0 }),
-          require('autoprefixer'),
+          require('cssnano')({ preset: 'default' }),
         ],
       },
     },

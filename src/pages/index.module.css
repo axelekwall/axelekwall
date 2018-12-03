@@ -23,4 +23,26 @@
     flex-direction: row;
     width: 100%;
     align-self: flex-start;
+    &:nth-child(2) {
+        width: 70%;
+        align-self: center;
+    }
+}
+
+@media (--tablet) {
+    .textRow:nth-child(2) {
+        width: 90%;
+        align-self: flex-end;
+    }
+}
+
+@media (--phone) {
+    .content {
+        margin-top: 10vh;
+    }
+
+    .textRow:nth-child(2) {
+        width: 100%;
+        align-self: flex-start;
+    }
 }
