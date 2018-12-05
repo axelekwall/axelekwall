@@ -4,6 +4,6 @@
   "name": "axel_ekwall",
   "alias": ["axelekwall.se", "www.axelekwall.se"],
   "builds": [
-    { "src": "package.json", "use": "@now/static-build" }
+    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "public" }}
   ]
 }

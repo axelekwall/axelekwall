@@ -31,9 +31,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "now-build": "npm run build && cp -r public/ dist/"
+    "start": "gatsby develop",
+    "now-build": "gatsby build"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
