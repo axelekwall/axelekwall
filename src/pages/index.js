@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-
+import { Link } from 'gatsby';
 import styles from './index.module.css';
 
 const IndexPage = () => (
@@ -14,10 +14,13 @@ const IndexPage = () => (
       </div>
       <div className={styles.textRow}>
         <p className={'front_page_bio'}>
-          My name is <b>Axel Ekwall</b>. I am a media technology <b>student</b>{' '}
-          at KTH Royal Institute of Technology in Stockholm, working as a{' '}
-          <b>developer</b>. I am also doing <b>photography</b> and{' '}
-          <b>experience design</b>.
+          My name is{' '}
+          <Link to="/about">
+            <b>Axel Ekwall</b>
+          </Link>
+          . I am a media technology <b>student</b> at KTH Royal Institute of
+          Technology in Stockholm, working as a <b>developer</b>. I am also
+          doing <b>photography</b> and <b>experience design</b>.
         </p>
       </div>
     </div>
