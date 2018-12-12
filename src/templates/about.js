@@ -1,38 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled';
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  max-width: ${({ theme }) => theme.contentWidth};
-  justify-content: flex-start;
-  margin-top: 20vh;
-  ${({ theme }) => theme.media.phone} {
-    margin-top: 10vh;
-  }
-`;
-
-const Page = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.main};
-`;
-
-const TextRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-self: flex-start;
-`;
+import { ContentWrapper, Page, TextRow } from '../components/elements';
 
 const About = ({ data: { markdownRemark } }) => (
-  <Page>
+  <Page backgroundColor="main">
     <Helmet title={markdownRemark.frontmatter.title}>
       <html lang="en" />
     </Helmet>
