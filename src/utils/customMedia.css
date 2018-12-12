@@ -1,3 +1,0 @@
-/* Shared media queries */
-@custom-media --phone screen and (max-width: 500px);
-@custom-media --tablet screen and (max-width: 900px);
