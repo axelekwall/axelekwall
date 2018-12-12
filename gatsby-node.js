@@ -39,9 +39,10 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: slug,
       component: path.resolve('src/templates/' + template + '.js'),
+      // additional data can be passed via context
       context: {
-        slug
-      }, // additional data can be passed via context
+        slug,
+      },
     });
   });
 };
