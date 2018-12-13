@@ -14,15 +14,40 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown-pages',
-        path: `${__dirname}/content/pages`,
+        path: `${__dirname}/src/content/pages`,
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 900,
+            },
+          },
+          // 'gatsby-remark-smartypants',
+          // 'gatsby-remark-responsive-iframe',
+          // 'gatsby-remark-prismjs',
+          // {
+          //   resolve: 'gatsby-remark-prettier',
+          //   options: {
+          //     usePrettierrc: true,
+          //     // Overwrite prettier options, check out https://prettier.io/docs/en/options.html
+          //     prettierOptions: {},
+          //   },
+          // },
+          // 'gatsby-remark-copy-linked-files',
+          // 'gatsby-remark-smartypants',
+        ],
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: 'gatsby-plugin-emotion',
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
