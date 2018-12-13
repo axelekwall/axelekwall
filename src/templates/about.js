@@ -13,7 +13,7 @@ const ImageRow = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   overflow-x: visible;
 `;
 
@@ -29,13 +29,15 @@ const About = ({ data: { markdownRemark } }) => (
       <ImageRow>
         <Img
           style={{
-            position: 'absolute',
+            position: 'relative',
             display: 'flex',
             width: '450px',
-            right: '50%',
+            right: '50px',
             overflow: 'visible',
           }}
-          imgStyle={{}}
+          imgStyle={{
+            objectPosition: 'center right',
+          }}
           fixed={markdownRemark.frontmatter.image.childImageSharp.fixed}
         />
         <div

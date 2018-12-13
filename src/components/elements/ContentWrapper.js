@@ -7,6 +7,8 @@ const ContentWrapper = styled.div`
   max-width: ${({ theme }) => theme.contentWidth};
   justify-content: flex-start;
   margin-top: 20vh;
+  margin-bottom: 10vh;
+  overflow-x: visible;
   ${({ theme }) => theme.media.phone} {
     margin-top: 10vh;
   }
