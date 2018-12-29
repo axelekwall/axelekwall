@@ -4,53 +4,54 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 
-import { ContentWrapper, Page, TextRow } from '../components/elements';
+import {
+  ContentWrapper,
+  Page,
+  TextRow,
+  ImageRow,
+} from '../components/elements';
 
-const ImageRow = styled.div`
+const AboutImg = styled(Img)`
   position: relative;
-  margin-top: 10%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  justify-content: flex-start;
-  overflow-x: visible;
+  width: 450px;
+  right: 50px;
+  overflow: visible;
 `;
 
-const About = ({ data: { markdownRemark } }) => (
+const AboutText = styled.div`
+  display: flex;
+  width: 450px;
+  padding: 5%;
+  align-self: center;
+`;
+
+const About = ({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, image },
+      html,
+    },
+  },
+}) => (
   <Page backgroundColor="main">
-    <Helmet title={markdownRemark.frontmatter.title}>
+    <Helmet title={title}>
       <html lang="en" />
     </Helmet>
     <ContentWrapper>
       <TextRow>
-        <h1 className={'big_title'}>{markdownRemark.frontmatter.title}</h1>
+        <h1 className={'big_title'}>{title}</h1>
       </TextRow>
       <ImageRow>
-        <Img
-          style={{
-            position: 'relative',
-            display: 'flex',
-            width: '450px',
-            right: '50px',
-            overflow: 'visible',
-          }}
+        <AboutImg
           imgStyle={{
             objectPosition: 'center right',
           }}
-          fixed={markdownRemark.frontmatter.image.childImageSharp.fixed}
+          fixed={image.childImageSharp.fixed}
         />
-        <div
-          style={{
-            display: 'flex',
-            width: '50%',
-            padding: '5%',
-            selfAlign: 'flex-end',
-            zIndex: 10,
-          }}
-        >
-          <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-        </div>
+        <AboutText>
+          <p dangerouslySetInnerHTML={{ __html: html }} />
+        </AboutText>
       </ImageRow>
     </ContentWrapper>
   </Page>

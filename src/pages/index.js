@@ -6,12 +6,12 @@ import { Page,  TextRow, ContentWrapper } from '../components/elements';
 
 const IndexPage = () => (
   <Page backgroundColor="main">
-    <Helmet title="axel_ekwall">
+    <Helmet title="hello">
       <html lang="en" />
     </Helmet>
     <ContentWrapper>
       <TextRow>
-        <h1 className={'big_title'}>Hello,</h1>
+        <h1 className={'big_title'}>hello,</h1>
       </TextRow>
       <TextRow>
         <p className={'front_page_bio'}>
