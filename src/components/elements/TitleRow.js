@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const TextRow = styled.div`
+const TitleRow = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -23,4 +23,4 @@ const TextRow = styled.div`
   }
 `;
 
-export default TextRow;
+export default TitleRow;

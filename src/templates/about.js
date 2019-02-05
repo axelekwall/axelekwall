@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 import {
   ContentWrapper,
   Page,
-  TextRow,
+  TitleRow,
   ImageRow,
 } from '../components/elements';
 
@@ -39,9 +39,9 @@ const About = ({
       <html lang="en" />
     </Helmet>
     <ContentWrapper>
-      <TextRow>
+      <TitleRow>
         <h1 className={'big_title'}>{title}</h1>
-      </TextRow>
+      </TitleRow>
       <ImageRow>
         <AboutImg
           imgStyle={{

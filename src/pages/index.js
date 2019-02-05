@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
-import { Page,  TextRow, ContentWrapper } from '../components/elements';
+import { Page,  TitleRow, ContentWrapper } from '../components/elements';
 
 const IndexPage = () => (
   <Page backgroundColor="main">
@@ -10,10 +10,10 @@ const IndexPage = () => (
       <html lang="en" />
     </Helmet>
     <ContentWrapper>
-      <TextRow>
+      <TitleRow>
         <h1 className={'big_title'}>hello,</h1>
-      </TextRow>
-      <TextRow>
+      </TitleRow>
+      <TitleRow>
         <p className={'front_page_bio'}>
           My name is{' '}
           <Link to="/about">
@@ -23,7 +23,7 @@ const IndexPage = () => (
           Technology in Stockholm, working as a <b>developer</b>. I am also
           doing <b>photography</b> and <b>experience design</b>.
         </p>
-      </TextRow>
+      </TitleRow>
     </ContentWrapper>
   </Page>
 );

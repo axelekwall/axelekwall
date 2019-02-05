@@ -1,6 +1,6 @@
 import ContentWrapper from './ContentWrapper';
 import Page from './Page';
-import TextRow from './TextRow';
+import TitleRow from './TitleRow';
 import ImageRow from './ImageRow';
 
-export { ContentWrapper, Page, TextRow, ImageRow };
+export { ContentWrapper, Page, TitleRow, ImageRow };
