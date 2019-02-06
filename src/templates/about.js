@@ -1,15 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 
-import {
-  ContentWrapper,
-  Page,
-  TitleRow,
-  ImageRow,
-} from '../components/elements';
+import { FlexRow } from '../components/elements';
+import Layout from '../components/Layout';
 
 const AboutImg = styled(Img)`
   position: relative;
@@ -34,27 +29,19 @@ const About = ({
     },
   },
 }) => (
-  <Page backgroundColor="main">
-    <Helmet title={title}>
-      <html lang="en" />
-    </Helmet>
-    <ContentWrapper>
-      <TitleRow>
-        <h1 className={'big_title'}>{title}</h1>
-      </TitleRow>
-      <ImageRow>
-        <AboutImg
-          imgStyle={{
-            objectPosition: 'center right',
-          }}
-          fixed={image.childImageSharp.fixed}
-        />
-        <AboutText>
-          <p dangerouslySetInnerHTML={{ __html: html }} />
-        </AboutText>
-      </ImageRow>
-    </ContentWrapper>
-  </Page>
+  <Layout backgroundColor="main" title={title}>
+    <FlexRow>
+      <AboutImg
+        imgStyle={{
+          objectPosition: 'center right',
+        }}
+        fixed={image.childImageSharp.fixed}
+      />
+      <AboutText>
+        <p dangerouslySetInnerHTML={{ __html: html }} />
+      </AboutText>
+    </FlexRow>
+  </Layout>
 );
 
 export default About;
