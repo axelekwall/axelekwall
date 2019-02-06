@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 const TitleRow = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 24px;
   width: ${({ main }) => (main ? '100%' : '70%')};
   align-self: ${({ main }) => (main ? 'flex-start' : 'center')};
   ${({ theme }) => theme.media.tablet} {

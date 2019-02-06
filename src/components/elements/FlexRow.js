@@ -6,12 +6,9 @@ const FlexRow = styled.div`
   width: 80vw;
   max-width: ${({ theme }) => theme.contentWidth};
   justify-content: flex-start;
-  margin-top: 20vh;
+  margin-top: 24px;
   margin-bottom: 10vh;
   overflow-x: visible;
-  ${({ theme }) => theme.media.phone} {
-    margin-top: 10vh;
-  }
 `;
 
 export default FlexRow;
