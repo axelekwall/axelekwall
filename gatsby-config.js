@@ -18,6 +18,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'json',
+        path: `${__dirname}/src/content/json`,
+      },
+    },
+    'gatsby-transformer-json',
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [

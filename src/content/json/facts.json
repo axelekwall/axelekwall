@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Browser",
+        "value": "Firefox"
+    },
+    {
+        "name": "Editor",
+        "value": "VS Code"
+    },
+    {
+        "name": "IDE",
+        "value": "WebStorm"
+    }
+]

@@ -5,20 +5,25 @@ import styled from '@emotion/styled';
 
 import { FlexRow } from '../components/elements';
 import Layout from '../components/Layout';
+import Facts from '../components/Facts';
 
 const AboutImg = styled(Img)`
-  position: relative;
   display: flex;
-  width: 450px;
-  right: 50px;
-  overflow: visible;
+  min-width: 400px;
+  width: 50%;
+`;
+
+const FactsContainer = styled.div`
+  display: flex;
+  min-width: 400px;
+  width: 50%;
+  align-self: center;
 `;
 
 const AboutText = styled.div`
   display: flex;
-  width: 450px;
-  padding: 5%;
-  align-self: center;
+  width: 100%;
+  padding: 24px;
 `;
 
 const About = ({
@@ -37,6 +42,11 @@ const About = ({
         }}
         fixed={image.childImageSharp.fixed}
       />
+      <FactsContainer>
+        <Facts />
+      </FactsContainer>
+    </FlexRow>
+    <FlexRow>
       <AboutText>
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </AboutText>
@@ -53,8 +63,8 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fixed(width: 450) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            fixed(width: 400) {
+              ...GatsbyImageSharpFixed_tracedSVG
             }
           }
         }
