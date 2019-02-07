@@ -32,7 +32,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 900,
+              maxWidth: 960,
             },
           },
           // 'gatsby-remark-smartypants',
@@ -47,7 +47,6 @@ module.exports = {
           //   },
           // },
           // 'gatsby-remark-copy-linked-files',
-          // 'gatsby-remark-smartypants',
         ],
       },
     },

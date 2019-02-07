@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 
-import { FlexRow } from '../components/elements';
+import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
 import BreakPoint from '../components/BreakPoint';
@@ -11,26 +11,7 @@ import BreakPoint from '../components/BreakPoint';
 const AboutImg = styled(Img)`
   display: flex;
   width: 50%;
-`;
-
-const FactsContainer = styled.div`
-  display: flex;
-  padding: 24px;
-  width: 50%;
   align-self: center;
-  ${({ theme }) => theme.media.tablet} {
-    width: 100%;
-    padding: 0px;
-  }
-`;
-
-const AboutText = styled.div`
-  display: flex;
-  width: 100%;
-  padding: 24px;
-  ${({ theme }) => theme.media.tablet} {
-    padding: 0px;
-  }
 `;
 
 const About = ({
@@ -42,7 +23,7 @@ const About = ({
   },
 }) => (
   <Layout title={title}>
-    <FlexRow>
+    <FlexRow justify="space-around">
       <BreakPoint show={false} breakPoint={'tablet'}>
         <AboutImg
           imgStyle={{
@@ -52,14 +33,12 @@ const About = ({
         />
       </BreakPoint>
 
-      <FactsContainer>
+      <FlexContainer desktopWidth="50%" alignSelf="center">
         <Facts />
-      </FactsContainer>
+      </FlexContainer>
     </FlexRow>
     <FlexRow>
-      <AboutText>
-        <p dangerouslySetInnerHTML={{ __html: html }} />
-      </AboutText>
+      <FlexContainer dangerouslySetInnerHTML={{ __html: html }} />
     </FlexRow>
   </Layout>
 );
@@ -67,7 +46,7 @@ const About = ({
 export default About;
 
 export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
+  query AboutPage($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title

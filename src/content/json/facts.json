@@ -19,5 +19,12 @@
         "value": "WebStorm",
         "url": "https://www.jetbrains.com/webstorm/",
         "after": "is my favorite."
+    },
+    {
+        "key": "git",
+        "before": "I love to use git for version control and code management.",
+        "value": "GitKraken",
+        "url": "https://www.gitkraken.com/",
+        "after": "is the best tool to help me do that without all the troubble."
     }
 ]
