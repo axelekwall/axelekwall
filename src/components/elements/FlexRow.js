@@ -6,7 +6,7 @@ const FlexRow = styled.div`
   flex-wrap: wrap;
   width: 80vw;
   max-width: ${({ theme }) => theme.contentWidth};
-  justify-content: space-around;
+  justify-content: ${({ justify }) => justify || 'flex-start'};
   margin-top: 24px;
   margin-bottom: 24px;
 `;

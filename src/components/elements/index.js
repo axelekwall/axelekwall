@@ -1,8 +1,13 @@
 import ContentWrapper from './ContentWrapper';
 import Page from './Page';
 import TitleRow from './TitleRow';
-import ImageRow from './ImageRow';
 import FlexRow from './FlexRow';
-import TextContainer from './TextContainer';
+import FlexContainer from './FlexContainer';
 
-export { ContentWrapper, Page, TitleRow, ImageRow, FlexRow, TextContainer };
+export {
+  ContentWrapper,
+  Page,
+  TitleRow,
+  FlexRow,
+  FlexContainer,
+};
