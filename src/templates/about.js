@@ -11,6 +11,7 @@ import BreakPoint from '../components/BreakPoint';
 const AboutImg = styled(Img)`
   display: flex;
   width: 50%;
+  align-self: center;
 `;
 
 const FactsContainer = styled.div`
