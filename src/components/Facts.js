@@ -41,13 +41,21 @@ const Facts = () => (
             ({ node: { key, before, value, after, url } }) => {
               return (
                 <ListItem key={key}>
-                  <h5>
+                  <p>
                     <span>{before}</span>{' '}
-                    <Link href={url} target="_blank" rel="noopener noreferrer">
+                    {url ? (
+                      <Link
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <b>{value}</b>
+                      </Link>
+                    ) : (
                       <b>{value}</b>
-                    </Link>{' '}
+                    )}{' '}
                     <span>{after}</span>
-                  </h5>
+                  </p>
                 </ListItem>
               );
             }
