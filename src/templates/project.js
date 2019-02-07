@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { FlexRow, TextContainer } from '../components/elements';
 import Layout from '../components/Layout';
 
-const Work = ({
+const Project = ({
   data: {
     markdownRemark: {
       frontmatter: { title },
@@ -19,10 +19,10 @@ const Work = ({
   </Layout>
 );
 
-export default Work;
+export default Project;
 
 export const pageQuery = graphql`
-  query WorkPage($slug: String!) {
+  query ProjectPage($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
