@@ -8,22 +8,17 @@ const typography = new Typography({
   bodyWeight: 400,
   boldWeight: 500,
   headerFontFamily: ['IBM Plex Sans', 'Arial', 'sans-serif'],
-  bodyFontFamily: ['IBM Plex Serif', 'Georgia', 'serif'],
+  bodyFontFamily: ['IBM Plex Sans', 'Arial', 'sans-serif'],
   googleFonts: [
     {
       name: 'IBM Plex Sans',
-      styles: ['300', '400', '500'],
-    },
-    {
-      name: 'IBM Plex Serif',
       styles: ['300', '400', '500'],
     },
   ],
   overrideStyles: ({ rhythm, scale }, options) => ({
     'h1.big_title': scale(2.5),
     'p.front_page_bio': {
-      ...scale(1/2),
-      fontFamily: options.headerFontFamily.join(','),
+      ...scale(1 / 2),
     },
   }),
 });
