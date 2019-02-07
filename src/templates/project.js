@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { FlexRow, TextContainer } from '../components/elements';
+import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 
 const Project = ({
@@ -14,7 +14,7 @@ const Project = ({
 }) => (
   <Layout title={title}>
     <FlexRow>
-      <TextContainer dangerouslySetInnerHTML={{ __html: html }} />
+      <FlexContainer dangerouslySetInnerHTML={{ __html: html }} />
     </FlexRow>
   </Layout>
 );

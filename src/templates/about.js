@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 
-import { FlexRow, TextContainer } from '../components/elements';
+import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
 import BreakPoint from '../components/BreakPoint';
@@ -12,17 +12,6 @@ const AboutImg = styled(Img)`
   display: flex;
   width: 50%;
   align-self: center;
-`;
-
-const FactsContainer = styled.div`
-  display: flex;
-  padding: 24px;
-  width: 50%;
-  align-self: center;
-  ${({ theme }) => theme.media.tablet} {
-    width: 100%;
-    padding: 0px;
-  }
 `;
 
 const About = ({
@@ -34,7 +23,7 @@ const About = ({
   },
 }) => (
   <Layout title={title}>
-    <FlexRow>
+    <FlexRow justify="space-around">
       <BreakPoint show={false} breakPoint={'tablet'}>
         <AboutImg
           imgStyle={{
@@ -44,12 +33,12 @@ const About = ({
         />
       </BreakPoint>
 
-      <FactsContainer>
+      <FlexContainer desktopWidth="50%" alignSelf="center">
         <Facts />
-      </FactsContainer>
+      </FlexContainer>
     </FlexRow>
     <FlexRow>
-      <TextContainer dangerouslySetInnerHTML={{ __html: html }} />
+      <FlexContainer dangerouslySetInnerHTML={{ __html: html }} />
     </FlexRow>
   </Layout>
 );
