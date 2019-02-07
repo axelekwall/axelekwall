@@ -6,39 +6,43 @@
 
 // You can delete this file if you're not using it
 
-// const path = require('path');
+const path = require('path');
 
 exports.createPages = async ({ actions, graphql }) => {
-  // const { createPage } = actions;
+  const { createPage } = actions;
 
-  // const blogPostTemplate = path.resolve('src/templates/blogPost.jsx');
+  const markdownPagesQuery = await graphql(`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "markdown-pages" } }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                title
+                template
+                slug
+              }
+              html
+            }
+          }
+        }
+      }
+    }
+  `);
 
-  // const markdownQuery = await graphql(`
-  //   {
-  //     allMarkdownRemark(
-  //       sort: { order: DESC, fields: [frontmatter___date] }
-  //       limit: 1000
-  //     ) {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             path
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+  if (markdownPagesQuery.errors) {
+    throw new Error(markdownPagesQuery.errors);
+  }
 
-  // if (markdownQuery.errors) {
-  //   throw new Error(markdownQuery.errors);
-  // }
-
-  // markdownQuery.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //   createPage({
-  //     path: 'blog/' + node.frontmatter.path,
-  //     component: blogPostTemplate,
-  //     context: {}, // additional data can be passed via context
-  //   });
-  // });
+  markdownPagesQuery.data.allFile.edges.forEach(({ node }) => {
+    const { slug, template } = node.childMarkdownRemark.frontmatter;
+    createPage({
+      path: slug,
+      component: path.resolve('src/templates/' + template + '.js'),
+      // additional data can be passed via context
+      context: {
+        slug,
+      },
+    });
+  });
 };

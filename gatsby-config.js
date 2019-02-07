@@ -7,30 +7,57 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/content/images`,
       },
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'markdown-pages',
-    //     path: `${__dirname}/src/pages/blog`,
-    //   },
-    // },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/content/pages`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'json',
+        path: `${__dirname}/src/content/json`,
+      },
+    },
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 900,
+            },
+          },
+          // 'gatsby-remark-smartypants',
+          // 'gatsby-remark-responsive-iframe',
+          // 'gatsby-remark-prismjs',
+          // {
+          //   resolve: 'gatsby-remark-prettier',
+          //   options: {
+          //     usePrettierrc: true,
+          //     // Overwrite prettier options, check out https://prettier.io/docs/en/options.html
+          //     prettierOptions: {},
+          //   },
+          // },
+          // 'gatsby-remark-copy-linked-files',
+          // 'gatsby-remark-smartypants',
+        ],
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
-    // PostCSS Setup
     {
-      resolve: 'gatsby-plugin-postcss',
+      resolve: 'gatsby-plugin-emotion',
       options: {
-        postCssPlugins: [
-          require('postcss-preset-env')({
-            stage: 0,
-            importFrom: './src/utils/customMedia.css',
-          }),
-        ],
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
     {
@@ -42,7 +69,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#fff',
         display: 'minimal-ui',
-        icon: 'src/images/a_e_logo.png', // This path is relative to the root of the site.
+        icon: 'src/content/images/a_e_logo.png', // This path is relative to the root of the site.
       },
     },
     {
