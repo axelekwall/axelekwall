@@ -67,7 +67,7 @@ const About = ({
 export default About;
 
 export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
+  query AboutPage($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
