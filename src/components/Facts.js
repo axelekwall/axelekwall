@@ -2,6 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
+import Link from './Link';
+
 const List = styled.ul`
   list-style: none;
 `;
@@ -9,11 +11,6 @@ const List = styled.ul`
 const ListItem = styled.li`
   margin-bottom: 24px;
 `;
-
-const Link = styled.a`
-  text-decoration: none;
-  color: inherit;
-`
 
 const Facts = () => (
   <StaticQuery

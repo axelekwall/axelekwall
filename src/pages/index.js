@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import { TitleRow } from '../components/elements';
 import Layout from '../components/Layout';
+import Link from '../components/Link';
 
 const IndexPage = () => (
   <Layout title="hello,">
