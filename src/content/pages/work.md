@@ -1,6 +1,7 @@
 ---
 title: work
 menu: true
+type: page
 template: work
 slug: /work
 ---

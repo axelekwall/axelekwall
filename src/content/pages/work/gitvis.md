@@ -2,8 +2,9 @@
 title: gitvis
 slug: /work/gitvis
 menu: false
+type: work
 template: project
-image: ../images/gitvis.png
+image: ../../images/gitvis.png
 github: https://github.com/axelekwall/gitvis
 url: https://mini-gitvis.firebaseapp.com
 ---

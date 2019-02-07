@@ -2,6 +2,7 @@
 title: about me
 menu: true
 template: about
+type: page
 slug: /about
 image: ../images/me_image.jpg
 ---

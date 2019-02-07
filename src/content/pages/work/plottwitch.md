@@ -2,8 +2,9 @@
 title: plot twitch
 slug: /work/plottwitch
 menu: false
+type: work
 template: project
-image: ../images/plottwitch.png
+image: ../../images/plottwitch.png
 github: https://github.com/axelekwall/plottwitch
 url: https://plottwitch.axelekwall.se
 ---
