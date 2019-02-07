@@ -16,6 +16,7 @@ const AboutImg = styled(Img)`
 const FactsContainer = styled.div`
   display: flex;
   min-width: 400px;
+  padding: 24px;
   width: 50%;
   align-self: center;
 `;
@@ -34,7 +35,7 @@ const About = ({
     },
   },
 }) => (
-  <Layout backgroundColor="main" title={title}>
+  <Layout title={title}>
     <FlexRow>
       <AboutImg
         imgStyle={{

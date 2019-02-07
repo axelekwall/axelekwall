@@ -5,7 +5,7 @@ import { TitleRow } from '../components/elements';
 import Layout from '../components/Layout';
 
 const IndexPage = () => (
-  <Layout backgroundColor="main" title="hello,">
+  <Layout title="hello,">
     <TitleRow>
       <p className={'front_page_bio'}>
         My name is{' '}

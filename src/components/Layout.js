@@ -5,7 +5,7 @@ import BigTitle from './BigTitle';
 import { Page, ContentWrapper } from './elements';
 
 const Layout = ({ children, title, backgroundColor }) => (
-  <Page backgroundColor={backgroundColor}>
+  <Page backgroundColor={backgroundColor || 'main'}>
     <Helmet title={title}>
       <html lang="en" />
     </Helmet>
