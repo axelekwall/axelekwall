@@ -12,6 +12,10 @@ const ListItem = styled.li`
   margin-bottom: 24px;
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+`;
+
 const Facts = () => (
   <StaticQuery
     query={graphql`
@@ -30,7 +34,7 @@ const Facts = () => (
       }
     `}
     render={data => (
-      <div>
+      <Wrapper>
         <h3>Some facts</h3>
         <List>
           {data.allFactsJson.edges.map(
@@ -49,7 +53,7 @@ const Facts = () => (
             }
           )}
         </List>
-      </div>
+      </Wrapper>
     )}
   />
 );

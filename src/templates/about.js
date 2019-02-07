@@ -6,25 +6,31 @@ import styled from '@emotion/styled';
 import { FlexRow } from '../components/elements';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
+import BreakPoint from '../components/BreakPoint';
 
 const AboutImg = styled(Img)`
   display: flex;
-  min-width: 400px;
   width: 50%;
 `;
 
 const FactsContainer = styled.div`
   display: flex;
-  min-width: 400px;
   padding: 24px;
   width: 50%;
   align-self: center;
+  ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    padding: 0px;
+  }
 `;
 
 const AboutText = styled.div`
   display: flex;
   width: 100%;
   padding: 24px;
+  ${({ theme }) => theme.media.tablet} {
+    padding: 0px;
+  }
 `;
 
 const About = ({
@@ -37,12 +43,15 @@ const About = ({
 }) => (
   <Layout title={title}>
     <FlexRow>
-      <AboutImg
-        imgStyle={{
-          objectPosition: 'center right',
-        }}
-        fixed={image.childImageSharp.fixed}
-      />
+      <BreakPoint show={false} breakPoint={'tablet'}>
+        <AboutImg
+          imgStyle={{
+            objectPosition: 'center right',
+          }}
+          fixed={image.childImageSharp.fixed}
+        />
+      </BreakPoint>
+
       <FactsContainer>
         <Facts />
       </FactsContainer>
@@ -64,7 +73,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            fixed(width: 400) {
+            fixed(width: 350) {
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
