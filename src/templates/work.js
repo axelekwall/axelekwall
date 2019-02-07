@@ -1,15 +1,20 @@
 import React from 'react';
 
+import { FlexRow, TextContainer } from '../components/elements';
 import Layout from '../components/Layout';
 
 const Work = ({
   data: {
-    markdownRemark: { frontmatter, html },
+    markdownRemark: {
+      frontmatter: { title },
+      html,
+    },
   },
 }) => (
-  <Layout title={'work'}>
-    <p>{frontmatter.title}</p>
-    <p dangerouslySetInnerHTML={{ __html: html }} />
+  <Layout title={title}>
+    <FlexRow>
+      <TextContainer dangerouslySetInnerHTML={{ __html: html }} />
+    </FlexRow>
   </Layout>
 );
 
