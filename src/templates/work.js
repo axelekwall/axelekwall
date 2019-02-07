@@ -44,6 +44,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            slug
             image {
               childImageSharp {
                 fluid(maxWidth: 800) {
