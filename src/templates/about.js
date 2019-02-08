@@ -17,7 +17,7 @@ const AboutImg = styled(Img)`
 const About = ({
   data: {
     markdownRemark: {
-      frontmatter: { title, image },
+      frontmatter: { title, image, github },
       html,
     },
   },
@@ -32,7 +32,6 @@ const About = ({
           fixed={image.childImageSharp.fixed}
         />
       </BreakPoint>
-
       <FlexContainer desktopWidth="50%" alignSelf="center">
         <Facts />
       </FlexContainer>
@@ -50,6 +49,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        github
         image {
           childImageSharp {
             fixed(width: 350) {
