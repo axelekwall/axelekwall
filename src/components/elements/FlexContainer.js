@@ -4,7 +4,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: ${({ desktopWidth }) => desktopWidth || '100%'};
-  padding: 24px;
+  padding: ${({ desktopWidth }) => desktopWidth ? '24px' : '24px 0px'};
   align-self: ${({ alignSelf }) => alignSelf || 'flex-start'};
   ${({ theme }) => theme.media.tablet} {
     padding: ${({ tabletWidth }) => tabletWidth ? '24px' : '24px 0px'};
