@@ -29,6 +29,7 @@ const NavList = styled.ul`
   align-items: center;
   text-decoration: none;
   transition: 0.1s ease-in-out;
+  height: ${({ open }) => (open ? 'auto' : '0')};
   transform: ${({ open }) => !open && 'translate(0, 400%)'};
   ${({ theme }) => theme.media.phone} {
     flex-direction: column;
