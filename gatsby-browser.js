@@ -5,7 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-
-import AppWrapper from './src/utils/appWrapper';
-
-export const wrapRootElement = AppWrapper;
