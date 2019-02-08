@@ -1,0 +1,30 @@
+[
+    {
+        "key": "browser",
+        "before": "My browser of choice is",
+        "value": "Firefox.",
+        "url": "https://www.mozilla.org/en-US/firefox/",
+        "after": ""
+    },
+    {
+        "key": "editor",
+        "before": "I use the",
+        "value": "VS Code",
+        "url": "https://code.visualstudio.com/",
+        "after": "editor."
+    },
+    {
+        "key": "ide",
+        "before": "When I need an IDE,",
+        "value": "WebStorm",
+        "url": "https://www.jetbrains.com/webstorm/",
+        "after": "is my favorite."
+    },
+    {
+        "key": "git",
+        "before": "I love to use git for version control and code management.",
+        "value": "GitKraken",
+        "url": "https://www.gitkraken.com/",
+        "after": "is the best tool to help me do that without all the troubble."
+    }
+]
