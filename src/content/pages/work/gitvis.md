@@ -8,8 +8,10 @@ image: ../../images/gitvis.png
 github: https://github.com/axelekwall/gitvis
 url: https://mini-gitvis.firebaseapp.com
 ---
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+The gitvis application was build together with Ella Wirstad Gustafsson, as a part of the course "Visualization" I took during my exchange semester at Univeristy of Technology in Eindhoven. 
+
+The purpose was to provide a more interactive and visual search experience for repositories on github, and to improve the possibilities to explore and compare repositories based on a search query.
 
 ![picture 1](../../images/gitvis2.png)
 
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+The visualizations in the application was created with Vue.js and D3.js. For the interaction with the Github GraphQL API, we used Apollo GraphQL and to authenticate the user with Github, we used Firebase Auth.

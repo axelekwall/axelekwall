@@ -6,12 +6,16 @@ type: work
 template: project
 image: ../../images/whatsup.png
 github: https://github.com/axelekwall/kth/tree/master/DH2321-Infovis/proj-2
-url: https://kth.axelekwall.se/DH2321-Infovis/proj-2/visualization/scatter
+url: https://kth.axelekwall.se/DH2321-Infovis/proj-2/
 ---
-Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+I wanted to find out more aboout how people in different contries feel about their neigbours. What do they care about and is there any correlations to be found in the data?
 
-![picture 1](../../images/whatsup.png)
+My first step was to go to the "World Values Survey" website to see if I could find the data I needed for my question. I realized that there was a lot of intreresting data but the tools on the World Values Surveys website wasn't powerful enough to give a good picture.
 
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+![](../../images/whatsup.png)
 
-![picture 2](../../images/whatsup2.png)
+To get a better picture of how peole all over the world feel about their neighbors, I created a visualization in D3.js and Vue.js. The big problem with the data visualizatin on the World Valeus Survey website is how hard it is to draw conclusions over time and to compare the values of many countries at the same time.
+
+My solution was to create both a scatter plot and a parallel coordinates chart, and let the user explore the data. To discover development over time, there is the optoin to choose different time periods and se hw the data changes.
+
+![](../../images/whatsup2.png)
