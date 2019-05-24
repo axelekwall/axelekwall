@@ -3,6 +3,7 @@ module.exports = {
     title: 'axel_ekwall',
   },
   plugins: [
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
