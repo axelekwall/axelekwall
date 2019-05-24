@@ -3,16 +3,18 @@ import styled from '@emotion/styled';
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${({ desktopWidth }) => desktopWidth || '100%'};
-  padding: ${({ desktopWidth }) => (desktopWidth ? '24px' : '24px 0px')};
-  align-self: ${({ alignSelf }) => alignSelf || 'flex-start'};
-  ${({ theme }) => theme.media.tablet} {
-    padding: ${({ tabletWidth }) => (tabletWidth ? '24px' : '24px 0px')};
-    width: ${({ tabletWidth }) => tabletWidth || '100%'};
+  width: ${({ desktopWidth }): string => desktopWidth || '100%'};
+  padding: ${({ desktopWidth }): string =>
+    desktopWidth ? '24px' : '24px 0px'};
+  align-self: ${({ alignSelf }): string => alignSelf || 'flex-start'};
+  ${({ theme }): string => theme.media.tablet} {
+    padding: ${({ tabletWidth }): string =>
+      tabletWidth ? '24px' : '24px 0px'};
+    width: ${({ tabletWidth }): string => tabletWidth || '100%'};
   }
-  ${({ theme }) => theme.media.phone} {
-    padding: 24px 0px;
-    width: ${({ phoneWidth }) => phoneWidth || '100%'};
+  ${({ theme }): string => theme.media.phone} {
+    padding: 24px 0;
+    width: ${({ phoneWidth }): string => phoneWidth || '100%'};
   }
 `;
 

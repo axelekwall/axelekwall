@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    // 'gatsby-standard',
+    'gatsby-standard',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',

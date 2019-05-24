@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "amd",
+    "module": "commonjs",
     "target": "esnext",
     "jsx": "preserve",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "es2015", "es2017"],
     "strict": true,
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "noUnusedLocals": false
+    "noUnusedLocals": true
   },
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "public", ".cache", ".idea", ".vscode"]
 }

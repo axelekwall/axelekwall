@@ -5,8 +5,8 @@ const FlexRow = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 80vw;
-  max-width: ${({ theme }) => theme.contentWidth};
-  justify-content: ${({ justify }) => justify || 'flex-start'};
+  max-width: ${({ theme }): string => theme.contentWidth};
+  justify-content: ${({ justify }): string => justify || 'flex-start'};
   margin-top: 24px;
   margin-bottom: 24px;
 `;
