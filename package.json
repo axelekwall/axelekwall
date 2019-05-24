@@ -4,12 +4,9 @@
   "version": "0.1.0",
   "author": "axel ekwall <axel@minimize.se>",
   "dependencies": {
-    "@emotion/core": "^10.0.4",
-    "@emotion/styled": "^10.0.4",
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
     "classnames": "^2.2.6",
-    "emotion": "^10.0.4",
-    "emotion-server": "^10.0.4",
-    "emotion-theming": "^10.0.4",
     "gatsby": "^2.0.114",
     "gatsby-image": "^2.0.19",
     "gatsby-plugin-emotion": "^4.0.6",
@@ -44,7 +41,10 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "now-build": "gatsby build"
+    "type-check": "tsc",
+    "now-build": "gatsby build",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --fix"
   },
   "devDependencies": {
     "@types/node": "^12.0.2",

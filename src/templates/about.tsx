@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
@@ -14,14 +14,27 @@ const AboutImg = styled(Img)`
   align-self: center;
 `;
 
-const About = ({
+interface Props {
   data: {
     markdownRemark: {
-      frontmatter: { title, image, github },
+      frontmatter: {
+        title: string;
+        image: string;
+        github: string;
+      };
+      html: string;
+    };
+  };
+}
+
+const About: FunctionComponent<Props> = ({
+  data: {
+    markdownRemark: {
+      frontmatter: { title, image },
       html,
     },
   },
-}) => (
+}): ReactElement => (
   <Layout title={title}>
     <FlexRow justify="space-around">
       <BreakPoint show={false} breakPoint={'tablet'}>

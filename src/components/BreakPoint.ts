@@ -1,26 +1,34 @@
-import { Component } from 'react';
-
+import { Component, ReactElement } from 'react';
 import { media } from '../utils/theme';
 
-class BreakPoint extends Component {
-  state = {
+interface State {
+  show: boolean;
+}
+
+interface Props {
+  show: boolean;
+  breakPoint: string;
+}
+
+class BreakPoint extends Component<Props, State> {
+  private state = {
     show: false,
   };
 
-  mql;
+  private mql: MediaQueryList;
 
-  componentDidMount() {
+  public componentDidMount(): void {
     const mql = window.matchMedia(media[this.props.breakPoint]);
     this.mql = mql;
     mql.addListener(this.update);
     this.update(mql);
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount(): void {
     this.mql.removeListener(this.update);
   }
 
-  update = mql => {
+  private update = (mql: MediaQueryList): void => {
     const { show } = this.props;
     if (mql.matches) {
       this.setState({
@@ -33,7 +41,7 @@ class BreakPoint extends Component {
     }
   };
 
-  render() {
+  private render(): ReactElement {
     const { children } = this.props;
     const { show } = this.state;
     return show ? children : null;

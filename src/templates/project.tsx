@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement, FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
@@ -20,14 +20,27 @@ const LinkContainer = styled(FlexContainer)`
   }
 `;
 
-const Project = ({
+interface Props {
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        title: string;
+        github: string;
+        url: string;
+      };
+      html: string;
+    };
+  };
+}
+
+const Project: FunctionComponent<Props> = ({
   data: {
     markdownRemark: {
       frontmatter: { title, github, url },
       html,
     },
   },
-}) => (
+}): ReactElement => (
   <Layout title={title}>
     <LinkRow>
       <LinkContainer desktopWidth="30%" tabletWidth="50%" phoneWidth="50%">

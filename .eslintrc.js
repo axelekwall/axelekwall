@@ -1,16 +1,24 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'gatsby-standard',
+    // 'gatsby-standard',
+    'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
+  settings: {
+    react: {
+      version: '16.8',
+    },
+  },
   env: {
     browser: true,
     es6: true,
     node: true,
   },
+  plugins: ['@typescript-eslint', 'react'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,5 +26,16 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    'react/prop-types': 'off',
+  },
+  overrides: [
+    // Override some TypeScript rules just for .js files
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off', //
+      },
+    },
+  ],
 };

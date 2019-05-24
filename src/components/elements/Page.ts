@@ -7,7 +7,7 @@ const Page = styled.div`
   width: 100vw;
   min-height: 100vh;
   background-color: ${({ theme, backgroundColor }) =>
-  (backgroundColor) ? theme.colors[backgroundColor] : 'white'};
+    backgroundColor ? theme.colors[backgroundColor] : 'white'};
 `;
 
 export default Page;
