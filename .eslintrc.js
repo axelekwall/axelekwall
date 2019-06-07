@@ -12,6 +12,11 @@ module.exports = {
     react: {
       version: '16.8',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   env: {
     browser: true,
@@ -27,14 +32,15 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'react/prop-types': 'off',
+    // 'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   overrides: [
     // Override some TypeScript rules just for .js files
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off', //
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],
