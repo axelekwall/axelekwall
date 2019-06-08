@@ -32,8 +32,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // 'react/prop-types': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowTypedFunctionExpressions: true,
+      },
+    ],
   },
   overrides: [
     // Override some TypeScript rules just for .js files

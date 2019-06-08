@@ -1,13 +1,16 @@
-import React, { ReactElement, FunctionComponent } from 'react';
+import React, { ReactElement, FunctionComponent, ReactNode } from 'react';
 import { TitleRow } from './elements';
 
-interface Props {
-  text: string;
+export type SubTitleContent = string | ReactNode;
+interface SubTitleProps {
+  subTitleContent: SubTitleContent;
 }
 
-const SubTitle: FunctionComponent<Props> = ({ text }): ReactElement => (
+const SubTitle: FunctionComponent<SubTitleProps> = ({
+  subTitleContent,
+}): ReactElement => (
   <TitleRow>
-    <p className={'front_page_bio'}>{text}</p>
+    <p className={'front_page_bio'}>{subTitleContent}</p>
   </TitleRow>
 );
 

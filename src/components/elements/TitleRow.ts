@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-const TitleRow = styled.div`
+interface TitleRowProps {
+  main?: boolean;
+}
+
+const TitleRow = styled.div<TitleRowProps>`
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;

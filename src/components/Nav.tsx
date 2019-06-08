@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { FunctionComponent, useState, ReactElement } from 'react';
 import { StaticQuery, graphql, navigate } from 'gatsby';
 import styled from '@emotion/styled';
-
 import Link from './Link';
 
-const NavContainer = styled.nav`
+interface NavContainerProps {
+  backgroundColor?: string;
+}
+
+const NavContainer = styled.nav<NavContainerProps>`
   padding: 12px 24px 24px;
   z-index: 10;
   position: fixed;
@@ -15,11 +18,15 @@ const NavContainer = styled.nav`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${({ theme, backgroundColor }) =>
+  background-color: ${({ theme, backgroundColor }): string =>
     backgroundColor ? theme.colors[backgroundColor] : 'white'};
 `;
 
-const NavList = styled.ul`
+interface NavListProps {
+  open: boolean;
+}
+
+const NavList = styled.ul<NavListProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,24 +36,28 @@ const NavList = styled.ul`
   align-items: center;
   text-decoration: none;
   transition: 0.1s ease-in-out;
-  height: ${({ open }) => (open ? 'auto' : '0')};
-  transform: ${({ open }) => !open && 'translate(0, 400%)'};
-  ${({ theme }) => theme.media.phone} {
+  height: ${({ open }): string => (open ? 'auto' : '0')};
+  transform: ${({ open }): string => (open ? '' : 'translate(0, 400%)')};
+  ${({ theme }): string => theme.media.phone} {
     flex-direction: column;
   }
 `;
 
-const NavListItem = styled.li`
+interface NavListItemProps {
+  width: number;
+}
+
+const NavListItem = styled.li<NavListItemProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  width: ${({ width }) => width + '%'};
+  width: ${({ width }): string => width + '%'};
 `;
 
 const NavToggleContainer = styled.div`
   width: 80vw;
-  max-width: ${({ theme }) => theme.contentWidth};
+  max-width: ${({ theme }): string => theme.contentWidth};
   padding-top: 12px;
   display: flex;
   flex-direction: row;
@@ -57,56 +68,56 @@ const NavToggle = styled.div`
   align-self: center;
 `;
 
-class Nav extends Component {
-  state = {
-    open: false,
-  };
+interface NavProps {
+  backgroundColor?: string;
+}
 
-  toggle = () => {
-    const { open } = this.state;
-    this.setState({
-      open: !open,
-    });
+const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
+  const [open, setOpen] = useState(false);
+  const toggle = (): void => {
+    setOpen(!open);
   };
-
-  render() {
-    const { backgroundColor } = this.props;
-    const { open } = this.state;
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    title
-                    slug
-                  }
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                  slug
                 }
               }
             }
           }
-        `}
-        render={({ allMarkdownRemark: { edges } }) => (
-          <NavContainer backgroundColor={backgroundColor} open={open}>
-            <NavList open={open}>
-              {edges.map(({ node: { id, frontmatter: { title, slug } } }) => (
+        }
+      `}
+      render={({ allMarkdownRemark: { edges } }): ReactElement => (
+        <NavContainer backgroundColor={backgroundColor}>
+          <NavList open={open}>
+            {edges.map(
+              ({
+                node: {
+                  id,
+                  frontmatter: { title, slug },
+                },
+              }): ReactElement => (
                 <NavListItem key={id} width={100 / edges.length}>
                   <Link to={slug}>{title}</Link>
                 </NavListItem>
-              ))}
-            </NavList>
-            <NavToggleContainer open={open}>
-              <NavToggle onClick={() => navigate('/')}>{'< home'}</NavToggle>
-              <NavToggle onClick={this.toggle}>open menu</NavToggle>
-            </NavToggleContainer>
-          </NavContainer>
-        )}
-      />
-    );
-  }
-}
+              )
+            )}
+          </NavList>
+          <NavToggleContainer>
+            <NavToggle onClick={() => navigate('/')}>{'< home'}</NavToggle>
+            <NavToggle onClick={toggle}>open menu</NavToggle>
+          </NavToggleContainer>
+        </NavContainer>
+      )}
+    />
+  );
+};
 
 export default Nav;

@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-const FlexRow = styled.div`
+interface FlexRowProps {
+  justify: string;
+}
+
+const FlexRow = styled.div<FlexRowProps>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
