@@ -38,6 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const { slug, template } = node.childMarkdownRemark.frontmatter;
     createPage({
       path: slug,
+      // eslint-disable-next-line no-undef
       component: resolve('src/templates/' + template + '.js'),
       // additional data can be passed via context
       context: {
