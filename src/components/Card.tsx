@@ -14,7 +14,7 @@ type NavTo = (slug: string) => () => void;
 const Card: FunctionComponent = ({
   frontmatter: { image, title, slug },
   excerpt,
-}) => {
+}: any) => {
   const navTo: NavTo = slug => (): void => {
     navigate(slug);
   };

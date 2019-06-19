@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-
 import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
@@ -19,7 +18,7 @@ interface Props {
     markdownRemark: {
       frontmatter: {
         title: string;
-        image: string;
+        image: any;
         github: string;
       };
       html: string;

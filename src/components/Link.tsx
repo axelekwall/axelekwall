@@ -13,6 +13,8 @@ const Link: FunctionComponent<GatsbyLinkProps<{}>> = ({
   to,
   children,
   activeClassName,
+  // ref here to fix ts error with gatsby link interface
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
   ...other
 }) => {

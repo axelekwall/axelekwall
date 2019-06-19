@@ -1,7 +1,8 @@
-import React, { FunctionComponent, useState, ReactElement } from 'react';
-import { StaticQuery, graphql, navigate } from 'gatsby';
+import React, { FunctionComponent, useState, ReactNode } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Link from './Link';
+import navTo from '../utils/navTo';
 
 interface NavContainerProps {
   backgroundColor?: string;
@@ -77,6 +78,7 @@ const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
   const toggle = (): void => {
     setOpen(!open);
   };
+
   return (
     <StaticQuery
       query={graphql`
@@ -94,7 +96,7 @@ const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
           }
         }
       `}
-      render={({ allMarkdownRemark: { edges } }): ReactElement => (
+      render={({ allMarkdownRemark: { edges } }: any): ReactNode => (
         <NavContainer backgroundColor={backgroundColor}>
           <NavList open={open}>
             {edges.map(
@@ -103,7 +105,7 @@ const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
                   id,
                   frontmatter: { title, slug },
                 },
-              }): ReactElement => (
+              }: any): ReactNode => (
                 <NavListItem key={id} width={100 / edges.length}>
                   <Link to={slug}>{title}</Link>
                 </NavListItem>
@@ -111,7 +113,7 @@ const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
             )}
           </NavList>
           <NavToggleContainer>
-            <NavToggle onClick={() => navigate('/')}>{'< home'}</NavToggle>
+            <NavToggle onClick={navTo('/')}>{'< home'}</NavToggle>
             <NavToggle onClick={toggle}>open menu</NavToggle>
           </NavToggleContainer>
         </NavContainer>

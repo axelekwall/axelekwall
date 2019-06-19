@@ -1,7 +1,6 @@
-import React, { ReactElement, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-
 import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
@@ -12,10 +11,10 @@ const LinkRow = styled(FlexRow)`
 
 const LinkContainer = styled(FlexContainer)`
   padding: 0;
-  ${({ theme }) => theme.media.tablet} {
+  ${({ theme }): string => theme.media.tablet} {
     padding: 0;
   }
-  ${({ theme }) => theme.media.phone} {
+  ${({ theme }): string => theme.media.phone} {
     padding: 0px;
   }
 `;
@@ -40,7 +39,7 @@ const Project: FunctionComponent<Props> = ({
       html,
     },
   },
-}): ReactElement => (
+}) => (
   <Layout title={title}>
     <LinkRow>
       <LinkContainer desktopWidth="30%" tabletWidth="50%" phoneWidth="50%">

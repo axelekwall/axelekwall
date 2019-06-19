@@ -44,11 +44,7 @@ const Facts: FunctionComponent = () => (
                   <p>
                     <span>{before}</span>{' '}
                     {url ? (
-                      <Link
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link to={url} target="_blank" rel="noopener noreferrer">
                         <b>{value}</b>
                       </Link>
                     ) : (
