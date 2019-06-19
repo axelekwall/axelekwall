@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
@@ -34,7 +34,7 @@ const About: FunctionComponent<Props> = ({
       html,
     },
   },
-}): ReactElement => (
+}) => (
   <Layout title={title}>
     <FlexRow justify="space-around">
       <BreakPoint show={false} breakPoint={'tablet'}>

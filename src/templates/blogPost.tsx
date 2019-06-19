@@ -1,11 +1,11 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent } from 'react';
 // import { graphql } from "gatsby";
 
 interface Props {
   data: any;
 }
 
-const BlogPost: FunctionComponent<Props> = ({ data }): ReactElement => {
+const BlogPost: FunctionComponent<Props> = ({ data }) => {
   return <div>Blog post</div>;
 };
 

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface FlexRowProps {
-  justify: string;
+  justify?: string;
 }
 
 const FlexRow = styled.div<FlexRowProps>`

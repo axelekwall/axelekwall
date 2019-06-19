@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
 
-const FlexContainer = styled.div`
+interface FlexContainerProps {
+  desktopWidth?: string;
+  tabletWidth?: string;
+  phoneWidth?: string;
+  alignSelf?: string;
+}
+
+const FlexContainer = styled.div<FlexContainerProps>`
   display: flex;
   flex-direction: column;
   width: ${({ desktopWidth }): string => desktopWidth || '100%'};

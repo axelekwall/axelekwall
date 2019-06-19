@@ -1,4 +1,10 @@
-import { Component, ReactElement } from 'react';
+import {
+  Component,
+  FunctionComponent,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react';
 import { media } from '../utils/theme';
 
 interface State {
@@ -6,11 +12,22 @@ interface State {
 }
 
 interface Props {
-  show: boolean;
+  children: ReactNode;
   breakPoint: string;
 }
 
-class BreakPoint extends Component<Props, State> {
+// TODO: Continue refactor to functional component
+const BreakPoint: FunctionComponent<Props> = ({ children, breakPoint }) => {
+  const [show, setShow] = useState(false);
+  let mql: MediaQueryList;
+
+  useEffect(() => {
+
+  }, []);
+  return show ? children : null;
+};
+
+class BreakPointOld extends Component<Props, State> {
   private state = {
     show: false,
   };
@@ -41,7 +58,7 @@ class BreakPoint extends Component<Props, State> {
     }
   };
 
-  private render(): ReactElement {
+  public render() {
     const { children } = this.props;
     const { show } = this.state;
     return show ? children : null;

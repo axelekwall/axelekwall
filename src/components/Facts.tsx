@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Facts = (): ReactElement => (
+const Facts: FunctionComponent = () => (
   <StaticQuery
     query={graphql`
       query {
