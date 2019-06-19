@@ -1,5 +1,5 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import { Link as gLink } from 'gatsby';
+import React, { FunctionComponent } from 'react';
+import { Link as GLink, GatsbyLinkProps } from 'gatsby';
 import styled from '@emotion/styled';
 
 const StyledLink = styled.a`
@@ -7,18 +7,13 @@ const StyledLink = styled.a`
   color: inherit;
 `;
 
-const StyledGLink = StyledLink.withComponent(gLink);
+const StyledGLink = StyledLink.withComponent(GLink);
 
-interface LinkProps {
-  to: string;
-  children: ReactNode;
-  activeClassName?: string;
-}
-
-const Link: FunctionComponent<LinkProps> = ({
+const Link: FunctionComponent<GatsbyLinkProps<{}>> = ({
   to,
   children,
   activeClassName,
+  ref,
   ...other
 }) => {
   const internal = /^\/(?!\/)/.test(to);
