@@ -1,4 +1,4 @@
-import { Theme, Media, Colors } from '../typings/utils';
+import { Theme, Media, Colors } from '../types/utils';
 
 const media: Media = {
   phone: '(max-width: 599px)',

@@ -1,4 +1,4 @@
 import styled, { CreateStyled } from '@emotion/styled';
-import { Theme } from '../typings/utils';
+import { Theme } from '../types/utils';
 
 export default styled as CreateStyled<Theme>;
