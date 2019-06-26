@@ -15,7 +15,7 @@ const LinkContainer = styled(FlexContainer)`
     padding: 0;
   }
   ${({ theme }): string => theme.media.phone} {
-    padding: 0px;
+    padding: 0;
   }
 `;
 
