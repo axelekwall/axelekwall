@@ -34,7 +34,8 @@
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "snyk": "^1.189.0"
   },
   "keywords": [
     "gatsby",
@@ -44,7 +45,9 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "now-build": "gatsby build"
+    "now-build": "gatsby build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
@@ -55,5 +58,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/axelekwall/axelekwall.se"
-  }
+  },
+  "snyk": true
 }
