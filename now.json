@@ -1,8 +1,8 @@
 {
   "version": 2,
   "public": true,
-  "name": "axel_ekwall",
-  "alias": ["axelekwall.se", "www.axelekwall.se", "axelekwall.com", "www.axelekwall.com", "axelekwall.tech", "www.axelekwall.tech"],
+  "name": "portfolio",
+  "alias": ["axelekwall.se", "www.axelekwall.se", "axelekwall.com", "www.axelekwall.com"],
   "builds": [
     { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "public" }}
   ]
