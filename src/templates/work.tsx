@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { graphql } from 'gatsby';
 
 import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 
-const Work = ({
+interface Props {
+  data: any;
+}
+
+const Work: FunctionComponent<Props> = ({
   data: {
     markdownRemark: {
       frontmatter: { title },
@@ -13,17 +17,19 @@ const Work = ({
     },
     allMarkdownRemark: { edges: workArray },
   },
-}) => (
+}): ReactElement => (
   <Layout title={title}>
     <FlexRow>
       <FlexContainer dangerouslySetInnerHTML={{ __html: html }} />
     </FlexRow>
     <FlexRow>
-      {workArray.map(({ node }) => (
-        <FlexContainer key={node.id} desktopWidth="50%" tabletWidth="50%">
-          <Card {...node} />
-        </FlexContainer>
-      ))}
+      {workArray.map(
+        ({ node }: any): ReactElement => (
+          <FlexContainer key={node.id} desktopWidth="50%" tabletWidth="50%">
+            <Card {...node} />
+          </FlexContainer>
+        )
+      )}
     </FlexRow>
   </Layout>
 );

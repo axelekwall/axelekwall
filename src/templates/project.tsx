@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-
 import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
@@ -12,15 +11,28 @@ const LinkRow = styled(FlexRow)`
 
 const LinkContainer = styled(FlexContainer)`
   padding: 0;
-  ${({ theme }) => theme.media.tablet} {
+  ${({ theme }): string => theme.media.tablet} {
     padding: 0;
   }
-  ${({ theme }) => theme.media.phone} {
-    padding: 0px;
+  ${({ theme }): string => theme.media.phone} {
+    padding: 0;
   }
 `;
 
-const Project = ({
+interface Props {
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        title: string;
+        github: string;
+        url: string;
+      };
+      html: string;
+    };
+  };
+}
+
+const Project: FunctionComponent<Props> = ({
   data: {
     markdownRemark: {
       frontmatter: { title, github, url },

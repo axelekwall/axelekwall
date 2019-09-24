@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Facts = () => (
+const Facts: FunctionComponent = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -33,22 +33,18 @@ const Facts = () => (
         }
       }
     `}
-    render={data => (
+    render={(data): ReactElement => (
       <Wrapper>
         <h3>Some facts</h3>
         <List>
           {data.allFactsJson.edges.map(
-            ({ node: { key, before, value, after, url } }) => {
+            ({ node: { key, before, value, after, url } }): ReactElement => {
               return (
                 <ListItem key={key}>
                   <p>
                     <span>{before}</span>{' '}
                     {url ? (
-                      <Link
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link to={url} target="_blank" rel="noopener noreferrer">
                         <b>{value}</b>
                       </Link>
                     ) : (
