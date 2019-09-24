@@ -1,0 +1,10 @@
+{
+  "development": {
+    "apiUrl": "https://cms.axelekwall.se",
+    "contentApiKey": "b85d4c4f57b974f22f7572d896"
+  },
+  "production": {
+    "apiUrl": "https://cms.axelekwall.se",
+    "contentApiKey": "b85d4c4f57b974f22f7572d896"
+  }
+}
