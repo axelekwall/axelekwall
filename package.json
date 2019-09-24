@@ -37,7 +37,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "now-dev": "gatsby develop",
+    "dev": "gatsby develop",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --fix"
