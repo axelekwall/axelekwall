@@ -4,12 +4,12 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 80vw;
-  max-width: ${({ theme }) => theme.contentWidth};
+  max-width: ${({ theme }): string => theme.contentWidth};
   justify-content: flex-start;
   margin-top: 20vh;
   margin-bottom: 10vh;
   overflow-x: visible;
-  ${({ theme }) => theme.media.phone} {
+  ${({ theme }): string => theme.media.phone} {
     margin-top: 10vh;
   }
 `;

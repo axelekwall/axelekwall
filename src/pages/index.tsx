@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import Layout from '../components/Layout';
 import Link from '../components/Link';
@@ -29,6 +29,8 @@ const subTitle = (
   </>
 );
 
-const IndexPage = () => <Layout title="hello," subTitle={subTitle} />;
+const IndexPage: FunctionComponent = () => (
+  <Layout title="hello," subTitle={subTitle} />
+);
 
 export default IndexPage;

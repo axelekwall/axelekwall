@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 // import { graphql } from "gatsby";
 
-const BlogPost = ({data}) => {
-  console.log(data)
+interface Props {
+  data: any;
+}
 
+const BlogPost: FunctionComponent<Props> = ({ data }) => {
   return <div>Blog post</div>;
 };
 
