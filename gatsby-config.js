@@ -1,16 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
 const config = require('./src/config/siteConfig')
-const ghostConfig = require('./.ghost')
-const { apiUrl, contentApiKey } =
-  process.env.NODE_ENV === 'development'
-    ? ghostConfig.development
-    : ghostConfig.production
-
-if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-  throw new Error(
-    'GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.'
-  ) // eslint-disable-line
-}
 
 module.exports = {
   siteMetadata: {
@@ -62,31 +51,6 @@ module.exports = {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
-    {
-      resolve: 'gatsby-source-ghost',
-      options:
-        process.env.NODE_ENV === 'development'
-          ? ghostConfig.development
-          : ghostConfig.production,
-    },
-    // {
-    //   resolve: 'gatsby-plugin-feed',
-    //   options: {
-    //     query: `
-    //       {
-    //           allGhostSettings {
-    //               edges {
-    //                   node {
-    //                       title
-    //                       description
-    //                   }
-    //               }
-    //           }
-    //       }
-    //     `,
-    //     feeds: [generateRSSFeed(config)],
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
