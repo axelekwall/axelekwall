@@ -13,9 +13,16 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const markdownPagesQuery = await graphql(`
     {
-      allFile(filter: { sourceInstanceName: { eq: "markdown-pages" } }) {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "markdown-pages" }
+          extension: { eq: "md" }
+        }
+      ) {
         edges {
           node {
+            sourceInstanceName
+            extension
             childMarkdownRemark {
               frontmatter {
                 title
