@@ -1,17 +1,17 @@
-import { Theme, Media, Colors } from '../types/utils';
+import { Theme, Media, Colors } from '../types/utils'
 
 const media: Media = {
   phone: '(max-width: 599px)',
   tablet: '(max-width: 959px)',
   laptop: '(max-width: 1439px)',
-};
+}
 
 const colors: Colors = {
   main: '#e9e3e6',
   secondary: '#ffffff',
-};
+}
 
-const contentWidth = 960;
+const contentWidth = 960
 
 const theme: Theme = {
   media: {
@@ -21,8 +21,8 @@ const theme: Theme = {
   },
   colors,
   contentWidth: contentWidth + 'px',
-};
+}
 
-export { media, colors, contentWidth };
+export { media, colors, contentWidth }
 
-export default theme;
+export default theme

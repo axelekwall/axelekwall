@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -45,12 +46,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-emotion',
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
