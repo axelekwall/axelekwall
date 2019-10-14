@@ -38,7 +38,7 @@ const Facts: FunctionComponent = () => (
         <h3>Some facts</h3>
         <List>
           {data.allFactsJson.edges.map(
-            ({ node: { key, before, value, after, url } }): ReactElement => {
+            ({ node: { key, before, value, after, url } }) => {
               return (
                 <ListItem key={key}>
                   <p>
