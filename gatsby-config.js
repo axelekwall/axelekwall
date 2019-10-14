@@ -42,6 +42,10 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-emotion',
+      options: {},
+    },
     'gatsby-transformer-json',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

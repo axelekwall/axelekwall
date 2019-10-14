@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '../../utils/styled'
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -12,6 +12,6 @@ const ContentWrapper = styled.div`
   ${({ theme }): string => theme.media.phone} {
     margin-top: 10vh;
   }
-`;
+`
 
-export default ContentWrapper;
+export default ContentWrapper

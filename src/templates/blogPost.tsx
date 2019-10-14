@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react'
 // import { graphql } from "gatsby";
 
 interface Props {
-  data: any;
+  data: any
 }
 
 const BlogPost: FunctionComponent<Props> = ({ data }) => {
-  return <div>Blog post</div>;
-};
+  return <div>Blog post</div>
+}
 
-export default BlogPost;
+export default BlogPost
 
 // export const pageQuery = graphql`
 //   query($path: String!) {

@@ -1,12 +1,12 @@
-import React, { FunctionComponent, ReactElement } from 'react';
-import { graphql } from 'gatsby';
-
-import { FlexRow, FlexContainer } from '../components/elements';
-import Layout from '../components/Layout';
-import Card from '../components/Card';
+import React, { FunctionComponent, ReactElement } from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Card from '../components/Card'
+import FlexRow from '../components/elements/FlexRow'
+import FlexContainer from '../components/elements/FlexContainer'
 
 interface Props {
-  data: any;
+  data: any
 }
 
 const Work: FunctionComponent<Props> = ({
@@ -32,9 +32,9 @@ const Work: FunctionComponent<Props> = ({
       )}
     </FlexRow>
   </Layout>
-);
+)
 
-export default Work;
+export default Work
 
 export const pageQuery = graphql`
   query WorkPage($slug: String!) {
@@ -64,4 +64,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

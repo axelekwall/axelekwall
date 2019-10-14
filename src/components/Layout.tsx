@@ -1,16 +1,18 @@
-import React, { FunctionComponent, ReactNode } from 'react';
-import Helmet from 'react-helmet';
-import BigTitle from './BigTitle';
-import { Page, ContentWrapper } from './elements';
-import SubTitle, { SubTitleContent } from './SubTitle';
-import Nav from './Nav';
+import React, { FunctionComponent, ReactNode } from 'react'
+import { Helmet } from 'react-helmet'
+import BigTitle from './BigTitle'
+import SubTitle, { SubTitleContent } from './SubTitle'
+import Nav from './Nav'
+import '../styles/index.css'
+import Page from './elements/Page'
+import ContentWrapper from './elements/ContentWrapper'
 
 interface LayoutProps {
-  children?: ReactNode;
-  title: string;
-  backgroundColor?: string;
-  subTitle?: SubTitleContent;
-  hideNav?: boolean;
+  children?: ReactNode
+  title: string
+  backgroundColor?: string
+  subTitle?: SubTitleContent
+  hideNav?: boolean
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({
@@ -31,6 +33,6 @@ const Layout: FunctionComponent<LayoutProps> = ({
     </ContentWrapper>
     {!hideNav && <Nav backgroundColor={backgroundColor || 'main'} />}
   </Page>
-);
+)
 
-export default Layout;
+export default Layout

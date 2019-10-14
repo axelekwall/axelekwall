@@ -1,20 +1,20 @@
-import React, { FunctionComponent, ReactElement } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
+import React, { FunctionComponent, ReactElement } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled from '../utils/styled'
 
-import Link from './Link';
+import Link from './Link'
 
 const List = styled.ul`
   list-style: none;
-`;
+`
 
 const ListItem = styled.li`
   margin-bottom: 24px;
-`;
+`
 
 const Wrapper = styled.div`
   width: 100%;
-`;
+`
 
 const Facts: FunctionComponent = () => (
   <StaticQuery
@@ -53,13 +53,13 @@ const Facts: FunctionComponent = () => (
                     <span>{after}</span>
                   </p>
                 </ListItem>
-              );
+              )
             }
           )}
         </List>
       </Wrapper>
     )}
   />
-);
+)
 
-export default Facts;
+export default Facts

@@ -1,16 +1,23 @@
 export interface Media {
-  phone: string;
-  tablet: string;
-  laptop: string;
+  phone: string
+  tablet: string
+  laptop: string
 }
 
 export interface Colors {
-  main: string;
-  secondary: string;
+  main: string
+  secondary: string
+}
+
+export interface Fonts {
+  sans: string
+  serif: string
+  mono: string
 }
 
 export interface Theme {
-  media: Media;
-  colors: Colors;
-  contentWidth: string;
+  fonts: Fonts
+  media: Media
+  colors: Colors
+  contentWidth: string
 }

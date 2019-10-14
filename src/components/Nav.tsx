@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useState, ReactNode } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
-import Link from './Link';
-import navTo from '../utils/navTo';
+import React, { FunctionComponent, useState, ReactNode } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled from '../utils/styled'
+import Link from './Link'
+import navTo from '../utils/navTo'
 
 interface NavContainerProps {
-  backgroundColor?: string;
+  backgroundColor?: string
 }
 
 const NavContainer = styled.nav<NavContainerProps>`
@@ -21,10 +21,10 @@ const NavContainer = styled.nav<NavContainerProps>`
   right: 0;
   background-color: ${({ theme, backgroundColor }): string =>
     backgroundColor ? theme.colors[backgroundColor] : 'white'};
-`;
+`
 
 interface NavListProps {
-  open: boolean;
+  open: boolean
 }
 
 const NavList = styled.ul<NavListProps>`
@@ -42,10 +42,10 @@ const NavList = styled.ul<NavListProps>`
   ${({ theme }): string => theme.media.phone} {
     flex-direction: column;
   }
-`;
+`
 
 interface NavListItemProps {
-  width: number;
+  width: number
 }
 
 const NavListItem = styled.li<NavListItemProps>`
@@ -54,7 +54,7 @@ const NavListItem = styled.li<NavListItemProps>`
   justify-content: center;
   margin: 0;
   width: ${({ width }): string => width + '%'};
-`;
+`
 
 const NavToggleContainer = styled.div`
   width: 80vw;
@@ -63,21 +63,21 @@ const NavToggleContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
+`
 
 const NavToggle = styled.div`
   align-self: center;
-`;
+`
 
 interface NavProps {
-  backgroundColor?: string;
+  backgroundColor?: string
 }
 
 const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const toggle = (): void => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   return (
     <StaticQuery
@@ -119,7 +119,7 @@ const Nav: FunctionComponent<NavProps> = ({ backgroundColor }) => {
         </NavContainer>
       )}
     />
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
