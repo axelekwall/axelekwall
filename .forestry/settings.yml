@@ -14,7 +14,6 @@ sections:
   label: Pages
   create: documents
   match: "**/*"
-  exclude: "/work/**"
 - type: document
   path: content/json/facts.json
   label: Facts
