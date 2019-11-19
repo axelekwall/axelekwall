@@ -1,7 +1,7 @@
-import styled from '../../utils/styled'
+import styled from '../../utils/styled';
 
 interface PageProps {
-  backgroundColor?: string
+  backgroundColor?: string;
 }
 
 const Page = styled.div<PageProps>`
@@ -12,6 +12,6 @@ const Page = styled.div<PageProps>`
   min-height: 100vh;
   background-color: ${({ theme, backgroundColor }): string =>
     backgroundColor ? theme.colors[backgroundColor] : 'white'};
-`
+`;
 
-export default Page
+export default Page;

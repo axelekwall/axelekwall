@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from 'react'
-import { graphql } from 'gatsby'
-import styled from '../utils/styled'
-import Layout from '../components/Layout'
-import Link from '../components/Link'
-import FlexRow from '../components/elements/FlexRow'
-import FlexContainer from '../components/elements/FlexContainer'
+import React, { FunctionComponent } from 'react';
+import { graphql } from 'gatsby';
+import styled from '../utils/styled';
+import Layout from '../components/Layout';
+import Link from '../components/Link';
+import FlexRow from '../components/elements/FlexRow';
+import FlexContainer from '../components/elements/FlexContainer';
 
 const LinkRow = styled(FlexRow)`
   margin: 0;
-`
+`;
 
 const LinkContainer = styled(FlexContainer)`
   padding: 0;
@@ -18,19 +18,19 @@ const LinkContainer = styled(FlexContainer)`
   ${({ theme }): string => theme.media.phone} {
     padding: 0;
   }
-`
+`;
 
 interface Props {
   data: {
     markdownRemark: {
       frontmatter: {
-        title: string
-        github: string
-        url: string
-      }
-      html: string
-    }
-  }
+        title: string;
+        github: string;
+        url: string;
+      };
+      html: string;
+    };
+  };
 }
 
 const Project: FunctionComponent<Props> = ({
@@ -58,9 +58,9 @@ const Project: FunctionComponent<Props> = ({
       <FlexContainer dangerouslySetInnerHTML={{ __html: html }} />
     </FlexRow>
   </Layout>
-)
+);
 
-export default Project
+export default Project;
 
 export const pageQuery = graphql`
   query ProjectPage($slug: String!) {
@@ -73,4 +73,4 @@ export const pageQuery = graphql`
       html
     }
   }
-`
+`;

@@ -1,11 +1,11 @@
-import styled from '../../utils/styled'
+import styled from '../../utils/styled';
 
 interface H1Props {
-  font: string
+  font: string;
 }
 
 const H1 = styled.h1<H1Props>`
   font-family: ${({ theme, font }): string => theme.fonts[font]};
-`
+`;
 
-export default H1
+export default H1;

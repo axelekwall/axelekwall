@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -6,10 +7,10 @@
 
 // You can delete this file if you're not using it
 
-const path = require('path')
+const path = require('path');
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const markdownPagesQuery = await graphql(`
     {
@@ -35,14 +36,14 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     }
-  `)
+  `);
 
   if (markdownPagesQuery.errors) {
-    throw new Error(markdownPagesQuery.errors)
+    throw new Error(markdownPagesQuery.errors);
   }
 
   markdownPagesQuery.data.allFile.edges.forEach(({ node }) => {
-    const { slug, template } = node.childMarkdownRemark.frontmatter
+    const { slug, template } = node.childMarkdownRemark.frontmatter;
     createPage({
       path: slug,
       component: path.resolve('src/templates/' + template + '.tsx'),
@@ -50,6 +51,6 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         slug,
       },
-    })
-  })
-}
+    });
+  });
+};

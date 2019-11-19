@@ -1,7 +1,7 @@
-import styled from '../../utils/styled'
+import styled from '../../utils/styled';
 
 interface FlexRowProps {
-  justify?: string
+  justify?: string;
 }
 
 const FlexRow = styled.div<FlexRowProps>`
@@ -13,6 +13,6 @@ const FlexRow = styled.div<FlexRowProps>`
   justify-content: ${({ justify }): string => justify || 'flex-start'};
   margin-top: 24px;
   margin-bottom: 24px;
-`
+`;
 
-export default FlexRow
+export default FlexRow;

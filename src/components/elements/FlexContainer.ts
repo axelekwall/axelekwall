@@ -1,10 +1,10 @@
-import styled from '../../utils/styled'
+import styled from '../../utils/styled';
 
 interface FlexContainerProps {
-  desktopWidth?: string
-  tabletWidth?: string
-  phoneWidth?: string
-  alignSelf?: string
+  desktopWidth?: string;
+  tabletWidth?: string;
+  phoneWidth?: string;
+  alignSelf?: string;
 }
 
 const FlexContainer = styled.div<FlexContainerProps>`
@@ -23,6 +23,6 @@ const FlexContainer = styled.div<FlexContainerProps>`
     padding: 24px 0;
     width: ${({ phoneWidth }): string => phoneWidth || '100%'};
   }
-`
+`;
 
-export default FlexContainer
+export default FlexContainer;

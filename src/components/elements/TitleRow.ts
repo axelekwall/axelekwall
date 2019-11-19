@@ -1,7 +1,7 @@
-import styled from '../../utils/styled'
+import styled from '../../utils/styled';
 
 interface TitleRowProps {
-  main?: boolean
+  main?: boolean;
 }
 
 const TitleRow = styled.div<TitleRowProps>`
@@ -18,6 +18,6 @@ const TitleRow = styled.div<TitleRowProps>`
     width: 100%;
     align-self: flex-start;
   }
-`
+`;
 
-export default TitleRow
+export default TitleRow;
