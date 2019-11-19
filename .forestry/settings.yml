@@ -5,6 +5,10 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: document
+  path: content/json/facts.json
+  label: Facts
+  match: "**/*"
+- type: document
   path: content/json/education.json
   label: Education
   match: "**/*"
