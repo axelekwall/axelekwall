@@ -1,12 +1,13 @@
-import React, { ReactElement, FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import theme from './theme';
+import 'normalize.css';
 
 interface Props {
   element: ReactNode;
 }
 
-const AppWrapper: FunctionComponent<Props> = ({ element }): ReactElement => (
+const AppWrapper: FunctionComponent<Props> = ({ element }) => (
   <ThemeProvider theme={theme}>{element}</ThemeProvider>
 );
 
