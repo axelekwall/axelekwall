@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { graphql } from 'gatsby';
-
-import { FlexRow, FlexContainer } from '../components/elements';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
+import FlexRow from '../components/elements/FlexRow';
+import FlexContainer from '../components/elements/FlexContainer';
 
 interface Props {
   data: any;

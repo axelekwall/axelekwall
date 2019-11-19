@@ -5,6 +5,6 @@ template: about
 github: https://github.com/axelekwall
 type: page
 slug: /about
-image: ../images/me_image.jpg
+image: '../media/me_image.jpg'
 ---
 More info here soon...

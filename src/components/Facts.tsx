@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
+import styled from '../styles/styled';
 
 import Link from './Link';
 
@@ -38,7 +38,7 @@ const Facts: FunctionComponent = () => (
         <h3>Some facts</h3>
         <List>
           {data.allFactsJson.edges.map(
-            ({ node: { key, before, value, after, url } }): ReactElement => {
+            ({ node: { key, before, value, after, url } }: any) => {
               return (
                 <ListItem key={key}>
                   <p>

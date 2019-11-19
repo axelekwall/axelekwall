@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import styled from '@emotion/styled';
-import { FlexRow, FlexContainer } from '../components/elements';
+import styled from '../styles/styled';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
 import BreakPoint from '../components/BreakPoint';
+import FlexRow from '../components/elements/FlexRow';
+import FlexContainer from '../components/elements/FlexContainer';
 
 const AboutImg = styled(Img)`
   display: flex;

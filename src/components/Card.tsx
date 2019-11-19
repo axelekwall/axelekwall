@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { navigate } from 'gatsby';
-import styled from '@emotion/styled';
+import styled from '../styles/styled';
 import Img from 'gatsby-image';
 
 const CardWrapper = styled.div`

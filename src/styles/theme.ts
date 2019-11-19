@@ -1,4 +1,4 @@
-import { Theme, Media, Colors } from '../types/utils';
+import { Theme, Media, Colors, Fonts } from '../types/utils';
 
 const media: Media = {
   phone: '(max-width: 599px)',
@@ -7,13 +7,20 @@ const media: Media = {
 };
 
 const colors: Colors = {
-  main: '#e9e3e6',
+  main: '#0d2b00',
   secondary: '#ffffff',
+};
+
+const fonts: Fonts = {
+  sans: "'IBM Plex Sans', sans-serif",
+  serif: "'IBM Plex Serif', serif",
+  mono: "'IBM Plex Mono', monospace",
 };
 
 const contentWidth = 960;
 
 const theme: Theme = {
+  fonts,
   media: {
     phone: `@media screen and ${media.phone}`,
     tablet: `@media screen and ${media.tablet}`,
@@ -23,6 +30,6 @@ const theme: Theme = {
   contentWidth: contentWidth + 'px',
 };
 
-export { media, colors, contentWidth };
+export { media, colors, contentWidth, fonts };
 
 export default theme;

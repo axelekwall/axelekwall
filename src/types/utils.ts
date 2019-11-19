@@ -1,16 +1,18 @@
 export interface Media {
-  phone: string;
-  tablet: string;
-  laptop: string;
+  [key: string]: string;
 }
 
 export interface Colors {
-  main: string;
-  secondary: string;
+  [key: string]: string;
 }
 
-export interface Theme {
+export interface Fonts {
+  [key: string]: string;
+}
+
+export type Theme = {
+  fonts: Fonts;
   media: Media;
   colors: Colors;
   contentWidth: string;
-}
+};

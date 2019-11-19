@@ -1,5 +1,6 @@
 import React, { ReactElement, FunctionComponent, ReactNode } from 'react';
-import { TitleRow } from './elements';
+import TitleRow from './elements/TitleRow';
+import P from './elements/P';
 
 export type SubTitleContent = string | ReactNode;
 interface SubTitleProps {
@@ -10,7 +11,7 @@ const SubTitle: FunctionComponent<SubTitleProps> = ({
   subTitleContent,
 }): ReactElement => (
   <TitleRow>
-    <p className={'front_page_bio'}>{subTitleContent}</p>
+    <P className={'front_page_bio'}>{subTitleContent}</P>
   </TitleRow>
 );
 

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "kth",
+    "title": "KTH Royal Institute of Technology",
+    "url": "https://kth.se"
+  },
+  {
+    "name": "tue",
+    "title": "TU/e Eindhoven University of Technology",
+    "url": "https://tue.nl"
+  },
+  {
+    "name": "ucsd",
+    "title": "UCSD University of California San Diego",
+    "url": "https://ucsd.edu"
+  }
+]

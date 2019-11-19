@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
-import styled from '@emotion/styled';
-import { FlexRow, FlexContainer } from '../components/elements';
+import styled from '../styles/styled';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
+import FlexRow from '../components/elements/FlexRow';
+import FlexContainer from '../components/elements/FlexContainer';
 
 const LinkRow = styled(FlexRow)`
   margin: 0;

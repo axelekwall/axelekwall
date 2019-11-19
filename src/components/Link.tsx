@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link as GLink, GatsbyLinkProps } from 'gatsby';
-import styled from '@emotion/styled';
+import styled from '../styles/styled';
 
 const StyledLink = styled.a`
   text-decoration: none;
