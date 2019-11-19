@@ -1,4 +1,4 @@
-import styled from '../../utils/styled';
+import styled from '../../styles/styled';
 
 interface H1Props {
   font: string;

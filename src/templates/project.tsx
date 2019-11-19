@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
-import styled from '../utils/styled';
+import styled from '../styles/styled';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import FlexRow from '../components/elements/FlexRow';

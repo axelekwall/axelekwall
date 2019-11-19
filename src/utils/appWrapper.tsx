@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider } from 'emotion-theming';
-import theme from './theme';
+import theme from '../styles/theme';
 import 'normalize.css';
 
 interface Props {

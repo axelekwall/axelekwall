@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from '../utils/styled';
+import styled from '../styles/styled';
 
 import Link from './Link';
 

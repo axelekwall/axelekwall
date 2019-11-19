@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useEffect, ReactElement } from 'react';
-import { media } from '../utils/theme';
+import { media } from '../styles/theme';
 
 interface Props {
   children: ReactElement;

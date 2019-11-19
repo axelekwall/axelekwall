@@ -1,4 +1,4 @@
-import styled from '../../utils/styled';
+import styled from '../../styles/styled';
 
 interface PageProps {
   backgroundColor?: string;

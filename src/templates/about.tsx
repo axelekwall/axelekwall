@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import styled from '../utils/styled';
+import styled from '../styles/styled';
 import Layout from '../components/Layout';
 import Facts from '../components/Facts';
 import BreakPoint from '../components/BreakPoint';
