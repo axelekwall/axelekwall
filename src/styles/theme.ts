@@ -7,7 +7,7 @@ const media: Media = {
 };
 
 const colors: Colors = {
-  main: '#e9e3e6',
+  main: '#0d2b00',
   secondary: '#ffffff',
 };
 
