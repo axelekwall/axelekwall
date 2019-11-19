@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/camelcase */
-const config = require('./src/config/siteConfig')
+const config = require('./src/config/siteConfig');
 
 module.exports = {
   siteMetadata: {
@@ -12,21 +12,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/content/images`,
+        path: `${__dirname}/content/images`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'markdown-pages',
-        path: `${__dirname}/src/content/pages`,
+        path: `${__dirname}/content/pages`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'json',
-        path: `${__dirname}/src/content/json`,
+        path: `${__dirname}/content/json`,
       },
     },
     {
@@ -64,4 +64,4 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-}
+};
