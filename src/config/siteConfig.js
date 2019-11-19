@@ -10,7 +10,7 @@ module.exports = {
   shareImageHeight: 523, // Change to the height of your default share image
 
   shortTitle: 'axel_ekwall', // Used for App manifest e.g. Mobile Home Screen
-  siteIcon: 'content/images/a_e_logo.png', // Logo in /static dir used for SEO, RSS, and App manifest
+  siteIcon: 'content/media/a_e_logo.png', // Logo in /static dir used for SEO, RSS, and App manifest
   backgroundColor: '#fff', // Used for Offline Manifest
   themeColor: '#fff', // Used for Offline Manifest
 };
