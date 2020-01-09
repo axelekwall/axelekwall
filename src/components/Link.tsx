@@ -16,6 +16,9 @@ const Link: FunctionComponent<GatsbyLinkProps<{}>> = ({
   // ref here to fix ts error with gatsby link interface
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref,
+  // inputMode here to fix ts error with gatsby link interface
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  inputMode,
   ...other
 }) => {
   const internal = /^\/(?!\/)/.test(to);
