@@ -36,7 +36,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 960,
+              maxWidth: config.contentWidth,
             },
           },
         ],
@@ -53,12 +53,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'axel ekwall',
+        name: config.siteTitle,
         short_name: config.shortTitle,
-        start_url: '/',
+        start_url: config.startUrl,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
+        display: config.display,
         icon: config.siteIcon, // This path is relative to the root of the site.
       },
     },
