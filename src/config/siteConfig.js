@@ -1,5 +1,3 @@
-const { contentWidth } = require('../styles/theme');
-
 module.exports = {
   siteUrl: 'https://axelekwall.se', // Site domain. Do not include a trailing slash!
 
@@ -19,5 +17,5 @@ module.exports = {
   startUrl: '/',
   display: 'minimal-ui',
 
-  contentWidth,
+  contentWidth: 960,
 };

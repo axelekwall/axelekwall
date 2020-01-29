@@ -1,5 +1,7 @@
 import { Theme, Media, Colors, Fonts } from '../types/utils';
 
+import { contentWidth } from '../config/siteConfig.js';
+
 const media: Media = {
   phone: '(max-width: 599px)',
   tablet: '(max-width: 959px)',
@@ -16,8 +18,6 @@ const fonts: Fonts = {
   serif: "'IBM Plex Serif', serif",
   mono: "'IBM Plex Mono', monospace",
 };
-
-const contentWidth = 960;
 
 const theme: Theme = {
   fonts,
