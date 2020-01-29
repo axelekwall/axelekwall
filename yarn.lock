@@ -1384,6 +1384,11 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.9.tgz#b2b85d8ac7bb2797e577050b61aeaf1b26fbd906"
   integrity sha512-FOAjeRHULSWXd6JMuCDwf3zPbe11kP971+Bufrj9M8rQ33ZMtThgKd6IJgzj6tr/+1Rq3czzLI1LAa9x0IC92w==
 
+"@minimizelab/mini_utils@^1.0.2":
+  version "1.0.2"
+  resolved "https://npm.pkg.github.com/download/@minimizelab/mini_utils/1.0.2/35b676a760ea78cad413fc3a63a52741e94c247f066b79bf5dad2bb7cf9fbe7b#682aa3a6508face1d0157b4170034473e2a9dd0e"
+  integrity sha512-X8ds4XslziaeOpLfAeI6VBfrwjCGueGv1Wu7BU6ez3wavG9Swei4oKl6a6W953gvdCvqY4SzkNpIZ7rurOKRrQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
