@@ -36,7 +36,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 960,
+              maxWidth: config.contentWidth,
             },
           },
         ],
@@ -51,14 +51,23 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '2',
+        matomoUrl: 'https://stats.minimize.se',
+        siteUrl: 'https://axelekwall.se',
+        disableCookies: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'axel ekwall',
+        name: config.siteTitle,
         short_name: config.shortTitle,
-        start_url: '/',
+        start_url: config.startUrl,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
+        display: config.display,
         icon: config.siteIcon, // This path is relative to the root of the site.
       },
     },
