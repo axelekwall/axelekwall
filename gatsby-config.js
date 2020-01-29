@@ -51,6 +51,15 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '2',
+        matomoUrl: 'https://stats.minimize.se',
+        siteUrl: 'https://axelekwall.se',
+        disableCookies: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
