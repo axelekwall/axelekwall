@@ -51,12 +51,16 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-matomo',
+      resolve: 'gatsby-plugin-ackee-tracker',
       options: {
-        siteId: '2',
-        matomoUrl: 'https://stats.minimize.se',
-        siteUrl: 'https://axelekwall.se',
-        disableCookies: true,
+        // Domatin ID found when adding a domain in the admin panel.
+        domainId: 'b6a5f337-a58d-432c-811d-ae28d5e35eeb',
+        // URL to Server eg: "https://analytics.test.com".
+        server: 'https://stats.minimize.se',
+        // Disabled analytic tracking when running localy
+        ignoreLocalhost: true,
+        // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
+        detailed: true,
       },
     },
     {
