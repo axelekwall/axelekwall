@@ -1,37 +1,21 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { Helmet } from 'react-helmet';
-import BigTitle from './BigTitle';
-import SubTitle, { SubTitleContent } from './SubTitle';
-import Nav from './Nav';
-import '../styles/index.css';
+import Head from 'next/head';
+import Main from './elements/Main';
 import Page from './elements/Page';
-import ContentWrapper from './elements/ContentWrapper';
 
 interface LayoutProps {
   children?: ReactNode;
-  title: string;
-  backgroundColor?: string;
-  subTitle?: SubTitleContent;
-  hideNav?: boolean;
+  title?: string;
+  description?: string;
 }
 
-const Layout: FunctionComponent<LayoutProps> = ({
-  children,
-  title,
-  backgroundColor,
-  subTitle,
-  hideNav,
-}) => (
-  <Page backgroundColor={backgroundColor || 'main'}>
-    <Helmet title={title}>
+const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => (
+  <Page>
+    <Head>
+      <title>{title ?? 'axel ekwall'}</title>
       <html lang="en" />
-    </Helmet>
-    <ContentWrapper>
-      <BigTitle title={title} />
-      {subTitle && <SubTitle subTitleContent={subTitle} />}
-      {children}
-    </ContentWrapper>
-    {!hideNav && <Nav backgroundColor={backgroundColor || 'main'} />}
+    </Head>
+    <Main>{children}</Main>
   </Page>
 );
 

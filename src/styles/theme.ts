@@ -11,6 +11,9 @@ const media: Media = {
 const colors: Colors = {
   main: '#0d2b00',
   secondary: '#ffffff',
+  'text-dark': '#ffffff',
+  'text-light': '#000000',
+  'background-light': '#ffffff',
 };
 
 const fonts: Fonts = {
@@ -27,7 +30,7 @@ const theme: Theme = {
     laptop: `@media screen and ${media.laptop}`,
   },
   colors,
-  contentWidth: contentWidth + 'px',
+  contentWidth: 900 + 'px',
 };
 
 export { media, colors, contentWidth, fonts };

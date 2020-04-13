@@ -1,41 +1,40 @@
-import React, { FunctionComponent } from 'react';
+import fs from 'fs';
+import React, { FC, ReactElement, ReactNode } from 'react';
+import { GetStaticProps } from 'next';
+import Markdown from 'react-markdown';
+import matter from 'gray-matter';
 import Layout from '../components/Layout';
-// import Link from '../components/Link';
+import { getContentPath } from '../utils/getPath';
+import H1 from '../components/elements/H1';
+import P from '../components/elements/P';
 
-// const subTitle = (
-//   <>
-//     My name is{' '}
-//     <Link to="/about">
-//       <b>Axel Ekwall</b>
-//     </Link>
-//     . I am a media technology{' '}
-//     <Link to="/education">
-//       <b>student</b>
-//     </Link>{' '}
-//     at KTH Royal Institute of Technology in Stockholm, working as a{' '}
-//     <Link to="/work">
-//       <b>developer</b>
-//     </Link>
-//     . I am also doing{' '}
-//     <Link to="/photography">
-//       <b>photography</b>
-//     </Link>{' '}
-//     and{' '}
-//     <Link to="/work">
-//       <b>experience design</b>
-//     </Link>
-//     .
-//   </>
-// );
+interface Props {
+  content: string;
+}
 
-// const IndexPage: FunctionComponent = () => (
-//   <Layout title="hello," subTitle={subTitle} />
-// );
+const renderers: {
+  [key: string]: (props: { children: ReactNode }) => ReactElement;
+} = {
+  heading(props) {
+    console.log(props);
+    return <H1 font="sans">{props.children}</H1>;
+  },
+  paragraph({ children }) {
+    return <P>{children}</P>;
+  },
+};
 
-const subTitle = 'Updated website coming soon...';
-
-const IndexPage: FunctionComponent = () => (
-  <Layout hideNav title="hello," subTitle={subTitle} />
+const Home: FC<Props> = ({ content }) => (
+  <Layout title="hello">
+    <Markdown renderers={renderers}>{content}</Markdown>
+  </Layout>
 );
 
-export default IndexPage;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const path = getContentPath('index.md', ['pages']);
+  const fileBuffer = fs.readFileSync(path);
+  const { content } = matter(fileBuffer);
+  return { props: { content } };
+};
+
+export default Home;

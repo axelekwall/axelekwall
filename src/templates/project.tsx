@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { graphql } from 'gatsby';
 import styled from '../styles/styled';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
@@ -20,27 +19,9 @@ const LinkContainer = styled(FlexContainer)`
   }
 `;
 
-interface Props {
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        title: string;
-        github: string;
-        url: string;
-      };
-      html: string;
-    };
-  };
-}
+interface Props {}
 
-const Project: FunctionComponent<Props> = ({
-  data: {
-    markdownRemark: {
-      frontmatter: { title, github, url },
-      html,
-    },
-  },
-}) => (
+const Project: FunctionComponent<Props> = ({}) => (
   <Layout title={title}>
     <LinkRow>
       <LinkContainer desktopWidth="30%" tabletWidth="50%" phoneWidth="50%">
@@ -61,16 +42,3 @@ const Project: FunctionComponent<Props> = ({
 );
 
 export default Project;
-
-export const pageQuery = graphql`
-  query ProjectPage($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        github
-        url
-      }
-      html
-    }
-  }
-`;

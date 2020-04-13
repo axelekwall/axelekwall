@@ -1,17 +1,17 @@
 import styled from '../../styles/styled';
 
-const ContentWrapper = styled.div`
+const Main = styled.main`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-  width: 80vw;
+  width: 100%;
   max-width: ${({ theme }): string => theme.contentWidth};
   justify-content: flex-start;
-  margin-top: 20vh;
-  margin-bottom: 10vh;
+  margin: 20vh 5vw;
   overflow-x: visible;
   ${({ theme }): string => theme.media.phone} {
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
   }
 `;
 
-export default ContentWrapper;
+export default Main;
