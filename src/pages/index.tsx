@@ -1,40 +1,48 @@
-import fs from 'fs';
-import React, { FC, ReactElement, ReactNode } from 'react';
-import { GetStaticProps } from 'next';
-import Markdown from 'react-markdown';
-import matter from 'gray-matter';
+import React, { FC } from 'react';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
-import { getContentPath } from '../utils/getPath';
-import H1 from '../components/elements/H1';
-import P from '../components/elements/P';
 
-interface Props {
-  content: string;
+interface Frontmatter {
+  title: string;
 }
 
-const renderers: {
-  [key: string]: (props: { children: ReactNode }) => ReactElement;
-} = {
-  heading(props) {
-    console.log(props);
-    return <H1 font="sans">{props.children}</H1>;
-  },
-  paragraph({ children }) {
-    return <P>{children}</P>;
-  },
-};
+interface MdxNode {
+  exerpt: string;
+  body: string;
+  frontmatter: Frontmatter;
+}
 
-const Home: FC<Props> = ({ content }) => (
-  <Layout title="hello">
-    <Markdown renderers={renderers}>{content}</Markdown>
+interface Props {
+  data: {
+    file: {
+      childMdx: MdxNode;
+    };
+  };
+}
+
+const Home: FC<Props> = ({
+  data: {
+    file: { childMdx: page },
+  },
+}) => (
+  <Layout title={page.frontmatter.title}>
+    <MDXRenderer>{page.body}</MDXRenderer>
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const path = getContentPath('index.md', ['pages']);
-  const fileBuffer = fs.readFileSync(path);
-  const { content } = matter(fileBuffer);
-  return { props: { content } };
-};
+export const query = graphql`
+  query HomePageQuery {
+    file(sourceInstanceName: { eq: "markdown-pages" }, name: { eq: "index" }) {
+      childMdx {
+        excerpt
+        body
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+`;
 
 export default Home;

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import Head from 'next/head';
+import { Helmet } from 'react-helmet';
 import Main from './elements/Main';
 import Page from './elements/Page';
 
@@ -11,10 +11,10 @@ interface LayoutProps {
 
 const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => (
   <Page>
-    <Head>
+    <Helmet>
       <title>{title ?? 'axel ekwall'}</title>
       <html lang="en" />
-    </Head>
+    </Helmet>
     <Main>{children}</Main>
   </Page>
 );

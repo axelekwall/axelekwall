@@ -1,11 +1,11 @@
 import styled from '../../styles/styled';
 
 interface H1Props {
-  font: string;
+  font?: string;
 }
 
 const H1 = styled.h1<H1Props>`
-  font-family: ${({ theme, font }): string => theme.fonts[font]};
+  font-family: ${({ theme, font = 'sans' }): string => theme.fonts[font]};
   color: ${({ theme }): string => theme.colors['text-light']};
 `;
 

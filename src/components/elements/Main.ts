@@ -7,7 +7,7 @@ const Main = styled.main`
   width: 100%;
   max-width: ${({ theme }): string => theme.contentWidth};
   justify-content: flex-start;
-  margin: 20vh 5vw;
+  margin: 20vh 10vw;
   overflow-x: visible;
   ${({ theme }): string => theme.media.phone} {
     /* margin-top: 10vh; */
