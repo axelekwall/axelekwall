@@ -4,7 +4,7 @@ import Main from './elements/Main';
 import Page from './elements/Page';
 
 interface LayoutProps {
-  pageContext: { frontmatter?: { title?: string } };
+  pageContext?: { frontmatter?: { title?: string } };
   children?: ReactNode;
   title?: string;
   description?: string;
