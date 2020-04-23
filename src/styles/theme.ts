@@ -30,7 +30,7 @@ const theme: Theme = {
     laptop: `@media screen and ${media.laptop}`,
   },
   colors,
-  contentWidth: 900 + 'px',
+  contentWidth: contentWidth + 'px',
 };
 
 export { media, colors, contentWidth, fonts };

@@ -3,8 +3,9 @@ import { Link as GLink, GatsbyLinkProps } from 'gatsby';
 import styled from '../styles/styled';
 
 const StyledLink = styled.a`
+  font-family: ${({ theme, font = 'sans' }): string => theme.fonts[font]};
+  color: ${({ theme }): string => theme.colors['text-light']};
   text-decoration: none;
-  color: inherit;
 `;
 
 const StyledGLink = StyledLink.withComponent(GLink);

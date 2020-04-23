@@ -14,5 +14,5 @@ module.exports = {
   startUrl: '/',
   display: 'minimal-ui',
 
-  contentWidth: 960,
+  contentWidth: 600,
 };

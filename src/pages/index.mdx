@@ -1,8 +1,32 @@
 ---
-title: 'hello'
-body: 'hello again'
+title: hello
 ---
+
+import { graphql } from 'gatsby';
+import ProfileCard from '../components/ProfileCard.tsx';
+import H1 from '../components/elements/H1.ts';
+
+export const pageQuery = graphql`
+  query IndexPage {
+    file(
+      relativePath: { eq: "me_image.jpg" }
+      sourceInstanceName: { eq: "media" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 # hello 👋
 
-I'm Axel, nice to meet you!
+I'm Axel, a developer and media technology student at KTH Royal Institute of Technology in Stockholm. I'm also passionate about photography and experience design.
+
+<ProfileCard img={props.data.file.childImageSharp.fluid}>
+  This is me.
+</ProfileCard>
+
+This spring I'm writing my master's thesis at Mentimeter on the topic "Technical Debt".
