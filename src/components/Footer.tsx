@@ -40,6 +40,7 @@ const FooterButton = styled.div<StyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all ease-in-out 200ms;
   :hover {
     transform: scale(1.2);
   }

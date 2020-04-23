@@ -13,8 +13,6 @@ const MenuWrapper = styled.div`
   justify-content: center;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -24,6 +22,7 @@ const MenuWrapper = styled.div`
 
 const Li = styled.li`
   text-decoration: none;
+  transition: all ease-in-out 200ms;
   :hover {
     background-color: white;
     color: black;
