@@ -8,7 +8,7 @@ module.exports = {
 
   siteTitle: 'axel ekwall',
   shortTitle: 'a_e', // Used for App manifest e.g. Mobile Home Screen
-  siteIcon: 'content/media/a_e_logo.png', // Logo in /static dir used for SEO, RSS, and App manifest
+  siteIcon: 'src/assets/media/a_e_logo.png', // Logo in /static dir used for SEO, RSS, and App manifest
   backgroundColor: '#fff', // Used for Offline Manifest
   themeColor: '#fff', // Used for Offline Manifest
   startUrl: '/',
