@@ -4,6 +4,7 @@ const Main = styled.main`
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  overflow: hidden;
   width: 100%;
   max-width: ${({ theme }): string => theme.contentWidth};
   justify-content: flex-start;

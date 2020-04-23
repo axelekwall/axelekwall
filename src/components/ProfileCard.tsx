@@ -18,7 +18,7 @@ const Row = styled.div`
 
 const ImageWrapper = styled.div`
   width: 50%;
-  max-width: 300px;
+  max-width: 400px;
   ${({ theme }): string => theme.media.phone} {
     width: 100%;
   }

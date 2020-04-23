@@ -29,7 +29,7 @@ const Li = styled.li`
   }
   cursor: pointer;
   list-style: none;
-  font-size: 3em;
+  font-size: 2.6em;
   margin: 15px 0;
   font-family: ${({ theme }): string => theme.fonts['sans']};
 `;
@@ -46,7 +46,7 @@ const Menu: FC = () => {
     (url: string, external = false) => (): void => {
       dispatch(actions.toggleMenu());
       if (external) {
-        window.open(url, 'tab');
+        window.location.href = url;
       } else {
         navigate(url);
       }
@@ -59,6 +59,7 @@ const Menu: FC = () => {
         <Ul>
           <Li onClick={createNavigate('/')}>me</Li>
           <Li onClick={createNavigate('/work')}>projects</Li>
+          <Li onClick={createNavigate('/contact')}>contact</Li>
           <Li onClick={createNavigate('https://github.com/axelekwall', true)}>
             code
           </Li>
