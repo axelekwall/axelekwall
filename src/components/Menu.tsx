@@ -59,9 +59,8 @@ const Menu: FC = () => {
         <Ul>
           <Li onClick={createNavigate('/')}>me</Li>
           <Li onClick={createNavigate('/work')}>projects</Li>
-          <Li onClick={createNavigate('/contact')}>contact</Li>
           <Li onClick={createNavigate('https://github.com/axelekwall', true)}>
-            code
+            github
           </Li>
           <Li
             onClick={createNavigate(
@@ -70,14 +69,6 @@ const Menu: FC = () => {
             )}
           >
             linkedin
-          </Li>
-          <Li
-            onClick={createNavigate(
-              'https://github.com/axelekwall/axelekwall.se',
-              true
-            )}
-          >
-            src/
           </Li>
         </Ul>
       </Main>
