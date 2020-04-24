@@ -7,50 +7,42 @@
 
 // You can delete this file if you're not using it
 
-// const path = require('path');
+const path = require('path');
 
-// exports.createPages = async ({ actions, graphql }) => {
-//   const { createPage } = actions;
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-//   const markdownPagesQuery = await graphql(`
-//     {
-//       allFile(
-//         filter: {
-//           sourceInstanceName: { eq: "markdown-pages" }
-//           extension: { eq: "md" }
-//         }
-//       ) {
-//         edges {
-//           node {
-//             sourceInstanceName
-//             extension
-//             childMarkdownRemark {
-//               frontmatter {
-//                 title
-//                 template
-//                 slug
-//               }
-//               html
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `);
+  const workPagesQuery = await graphql(`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "work" } }) {
+        edges {
+          node {
+            childMdx {
+              frontmatter {
+                template
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
-//   if (markdownPagesQuery.errors) {
-//     throw new Error(markdownPagesQuery.errors);
-//   }
+  if (workPagesQuery.errors) {
+    throw new Error(workPagesQuery.errors);
+  }
 
-//   markdownPagesQuery.data.allFile.edges.forEach(({ node }) => {
-//     const { slug, template } = node.childMarkdownRemark.frontmatter;
-//     createPage({
-//       path: slug,
-//       component: path.resolve('src/templates/' + template + '.tsx'),
-//       // additional data can be passed via context
-//       context: {
-//         slug,
-//       },
-//     });
-//   });
-// };
+  workPagesQuery.data.allFile.edges.forEach(({ node }) => {
+    const { slug, template } = node.childMdx.frontmatter;
+    createPage({
+      path: slug,
+      component: template
+        ? path.resolve('src/templates/' + template + '.tsx')
+        : path.resolve('src/templates/Work.tsx'),
+      context: {
+        slug,
+      },
+    });
+  });
+};

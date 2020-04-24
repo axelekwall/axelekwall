@@ -1,38 +1,35 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
-import BigTitle from './BigTitle';
-import SubTitle, { SubTitleContent } from './SubTitle';
-import Nav from './Nav';
-import '../styles/index.css';
+import Main from './elements/Main';
 import Page from './elements/Page';
-import ContentWrapper from './elements/ContentWrapper';
+import Menu from './Menu';
+import Footer from './Footer';
+import { useSelector } from 'react-redux';
+import { State } from '../store';
 
 interface LayoutProps {
+  pageContext?: { frontmatter?: { title?: string } };
   children?: ReactNode;
-  title: string;
-  backgroundColor?: string;
-  subTitle?: SubTitleContent;
-  hideNav?: boolean;
+  title?: string;
+  description?: string;
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({
+  pageContext,
+  title = 'axelekwall.se',
   children,
-  title,
-  backgroundColor,
-  subTitle,
-  hideNav,
-}) => (
-  <Page backgroundColor={backgroundColor || 'main'}>
-    <Helmet title={title}>
-      <html lang="en" />
-    </Helmet>
-    <ContentWrapper>
-      <BigTitle title={title} />
-      {subTitle && <SubTitle subTitleContent={subTitle} />}
-      {children}
-    </ContentWrapper>
-    {!hideNav && <Nav backgroundColor={backgroundColor || 'main'} />}
-  </Page>
-);
-
+}) => {
+  const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
+  return (
+    <Page>
+      <Helmet>
+        <title>{pageContext?.frontmatter?.title ?? title}</title>
+        <html lang="en" />
+      </Helmet>
+      {!menuOpen && <Main>{children}</Main>}
+      <Menu />
+      <Footer />
+    </Page>
+  );
+};
 export default Layout;

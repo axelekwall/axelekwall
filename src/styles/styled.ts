@@ -1,4 +1,6 @@
-import styled, { CreateStyled } from '@emotion/styled';
+import emostyle, { CreateStyled } from '@emotion/styled';
 import { Theme } from '../types/utils';
 
-export default styled as CreateStyled<Theme>;
+export const styled: CreateStyled<Theme> = emostyle;
+
+export default styled;
