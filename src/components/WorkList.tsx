@@ -14,7 +14,6 @@ interface Props {
 }
 
 const WorkList: FC<Props> = ({ data }) => {
-  console.log(data);
   return (
     <div>
       {data.map((work) => (

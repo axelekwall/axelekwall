@@ -1,16 +1,23 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Link as GLink, GatsbyLinkProps } from 'gatsby';
 import styled from '../styles/styled';
 
-const StyledLink = styled.a`
+interface LinkProps {
+  font?: string;
+  hover: boolean;
+}
+
+const StyledLink = styled.a<LinkProps>`
   font-family: ${({ theme, font = 'sans' }): string => theme.fonts[font]};
-  color: ${({ theme }): string => theme.colors['text-light']};
+  background-color: ${({ hover }): string => (hover ? 'black' : 'white')};
+  color: ${({ hover }): string => (!hover ? 'black' : 'white')};
+  transition: all ease-in-out 200ms;
   text-decoration: none;
 `;
 
 const StyledGLink = StyledLink.withComponent(GLink);
 
-const Link: FunctionComponent<GatsbyLinkProps<{}>> = ({
+const Link: FunctionComponent<GatsbyLinkProps<{ font?: string }>> = ({
   to,
   children,
   activeClassName,
@@ -24,24 +31,55 @@ const Link: FunctionComponent<GatsbyLinkProps<{}>> = ({
 }) => {
   const internal = /^\/(?!\/)/.test(to);
   const file = /\.[0-9a-z]+$/i.test(to);
-
+  const [hover, setHover] = useState(false);
   if (internal) {
     if (file) {
       return (
-        <StyledLink href={to} {...other}>
+        <StyledLink
+          onMouseEnter={(): void => {
+            setHover(true);
+          }}
+          onMouseLeave={(): void => {
+            setHover(false);
+          }}
+          hover={hover}
+          href={to}
+          {...other}
+        >
           {children}
         </StyledLink>
       );
     } else {
       return (
-        <StyledGLink to={to} activeClassName={activeClassName} {...other}>
+        <StyledGLink
+          onMouseEnter={(): void => {
+            setHover(true);
+          }}
+          onMouseLeave={(): void => {
+            setHover(false);
+          }}
+          hover={hover}
+          to={to}
+          activeClassName={activeClassName}
+          {...other}
+        >
           {children}
         </StyledGLink>
       );
     }
   } else {
     return (
-      <StyledLink href={to} {...other}>
+      <StyledLink
+        onMouseEnter={(): void => {
+          setHover(true);
+        }}
+        onMouseLeave={(): void => {
+          setHover(false);
+        }}
+        hover={hover}
+        href={to}
+        {...other}
+      >
         {children}
       </StyledLink>
     );

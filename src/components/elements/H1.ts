@@ -6,7 +6,7 @@ interface H1Props {
 
 const H1 = styled.h1<H1Props>`
   font-family: ${({ theme, font = 'sans' }): string => theme.fonts[font]};
-  color: ${({ theme }): string => theme.colors['text-light']};
+  color: inherit;
 `;
 
 export default H1;

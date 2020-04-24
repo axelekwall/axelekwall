@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
 import { styled } from '../styles/styled';
 import { navigate } from 'gatsby';
@@ -8,7 +8,12 @@ interface Props {
   slug: string;
 }
 
+interface TextWrapperProps {
+  hover: boolean;
+}
+
 const Row = styled.div`
+  cursor: pointer;
   margin: 25px 0;
   display: flex;
   flex-direction: row;
@@ -26,24 +31,31 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled.div<TextWrapperProps>`
   display: flex;
   flex-direction: column-reverse;
   padding: 0 20px;
   width: 100%;
+  background-color: ${({ hover }): string => (hover ? 'black' : 'white')};
+  color: ${({ hover }): string => (!hover ? 'black' : 'white')};
+  text-align: left;
   ${({ theme }): string => theme.media.phone} {
     flex-direction: row-reverse;
+    text-align: right;
     padding: 0;
   }
 `;
 
-const Text = styled.h3`
-  font-family: ${({ theme }): string => theme.fonts['sans']};
-`;
-
 const ProfileCard: FC<Props> = ({ img, children, slug }) => {
+  const [hover, setHover] = useState(false);
   return (
     <Row
+      onMouseEnter={(): void => {
+        setHover(true);
+      }}
+      onMouseLeave={(): void => {
+        setHover(false);
+      }}
       onClick={(): void => {
         navigate(slug);
       }}
@@ -51,7 +63,7 @@ const ProfileCard: FC<Props> = ({ img, children, slug }) => {
       <ImageWrapper>
         <Img fluid={img}></Img>
       </ImageWrapper>
-      <TextWrapper>{children}</TextWrapper>
+      <TextWrapper hover={hover}>{children}</TextWrapper>
     </Row>
   );
 };
