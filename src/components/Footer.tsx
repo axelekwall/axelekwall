@@ -3,7 +3,7 @@ import styled from '../styles/styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { State } from '../store';
 import { actions } from '../store/ui';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 interface StyleProps {
   isOpen: boolean;
@@ -40,9 +40,8 @@ const FooterButton = styled.div<StyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all ease-in-out 200ms;
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
@@ -58,7 +57,11 @@ const Footer: FC = () => {
           }}
           isOpen={menuOpen}
         >
-          <FiMenu style={{ color: menuOpen ? 'black' : 'white' }} />
+          {menuOpen ? (
+            <FiX style={{ color: 'black' }} />
+          ) : (
+            <FiMenu style={{ color: 'white' }} />
+          )}
         </FooterButton>
       </FooterInner>
     </FooterOuter>

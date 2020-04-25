@@ -1,9 +1,14 @@
 import React, { FC } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
 import { styled } from '../styles/styled';
+import { useStaticQuery, graphql } from 'gatsby';
 
-interface Props {
-  img: FluidObject;
+interface Data {
+  file: {
+    childImageSharp: {
+      fluid: FluidObject;
+    };
+  };
 }
 
 const Row = styled.div`
@@ -39,11 +44,25 @@ const Text = styled.h3`
   font-family: ${({ theme }): string => theme.fonts['sans']};
 `;
 
-const ProfileCard: FC<Props> = ({ img, children }) => {
+const ProfileCard: FC = ({ children }) => {
+  const data = useStaticQuery<Data>(graphql`
+    query IndexPage {
+      file(
+        relativePath: { eq: "me_image.jpg" }
+        sourceInstanceName: { eq: "media" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
   return (
     <Row>
       <ImageWrapper>
-        <Img fluid={img}></Img>
+        <Img fluid={data.file.childImageSharp.fluid}></Img>
       </ImageWrapper>
       <TextWrapper>
         <Text>{children}</Text>
