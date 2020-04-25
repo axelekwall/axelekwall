@@ -7,6 +7,7 @@ const components = {
   h1: H1,
   h3: H3,
   p: P,
+  a: Link,
   Link,
   H1,
   P,
