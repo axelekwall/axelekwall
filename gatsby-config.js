@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 const config = require('./src/config/siteConfig');
 
 module.exports = {
