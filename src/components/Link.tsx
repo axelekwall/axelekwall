@@ -14,8 +14,7 @@ const StyledLink = styled.a<LinkProps>`
     background-color: black;
     color: white;
   }
-  transition: all ease-in-out 200ms;
-  text-decoration: none;
+  text-decoration: underline;
 `;
 
 const StyledGLink = StyledLink.withComponent(GLink);

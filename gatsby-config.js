@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 const config = require('./src/config/siteConfig');
 
 module.exports = {
@@ -40,6 +39,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-plausible',
+      options: {
+        domain: 'axelekwall.se',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-emotion',
       options: {},
     },
@@ -47,19 +52,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-plugin-ackee-tracker',
-    //   options: {
-    //     // Domatin ID found when adding a domain in the admin panel.
-    //     domainId: 'b6a5f337-a58d-432c-811d-ae28d5e35eeb',
-    //     // URL to Server eg: "https://analytics.test.com".
-    //     server: 'https://stats.minimize.se',
-    //     // Disabled analytic tracking when running localy
-    //     ignoreLocalhost: true,
-    //     // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
-    //     detailed: true,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

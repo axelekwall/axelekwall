@@ -58,9 +58,9 @@ const Footer: FC = () => {
           isOpen={menuOpen}
         >
           {menuOpen ? (
-            <FiX style={{ color: 'black' }} />
+            <FiX size={24} style={{ color: 'black' }} />
           ) : (
-            <FiMenu style={{ color: 'white' }} />
+            <FiMenu size={24} style={{ color: 'white' }} />
           )}
         </FooterButton>
       </FooterInner>
