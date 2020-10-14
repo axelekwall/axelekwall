@@ -1,7 +1,7 @@
 {
   "name": "axelekwall.se",
   "description": "My portfolio website",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "author": "axel ekwall <axel@minimize.se>",
   "dependencies": {
     "@emotion/core": "^10.0.35",
@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-sharp": "^2.5.13",
+    "next": "^9.5.3",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -44,9 +45,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "start": "gatsby develop",
-    "dev": "gatsby develop",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --fix"
