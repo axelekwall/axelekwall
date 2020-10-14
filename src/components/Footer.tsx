@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from '../styles/styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { State } from '../store';
 import { actions } from '../store/ui';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { C } from '../types/utils';
 
 interface StyleProps {
   isOpen: boolean;
@@ -45,7 +46,7 @@ const FooterButton = styled.div<StyleProps>`
   }
 `;
 
-const Footer: FC = () => {
+const Footer: C = () => {
   const dispatch = useDispatch();
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (

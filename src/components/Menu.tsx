@@ -1,7 +1,6 @@
 import React, { FC, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
-import { navigate } from 'gatsby';
 import styled from '../styles/styled';
 import Main from './elements/Main';
 import { State } from '../store';
@@ -49,7 +48,7 @@ const Menu: FC = () => {
       if (external) {
         window.location.href = url;
       } else {
-        navigate(url);
+        // navigate(url);
       }
     },
     [dispatch]

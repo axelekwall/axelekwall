@@ -1,5 +1,7 @@
-import React, { FC } from 'react';
+import { C } from '../src/types/utils';
+import React from 'react';
+import Layout from '../src/components/Layout';
 
-const Index: FC = () => <div>Hello</div>;
+const Index: C = () => <Layout>Hello</Layout>;
 
 export default Index;
