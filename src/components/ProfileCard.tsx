@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
-import { styled } from '../styles/styled';
+import styled from '@emotion/styled';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface Data {

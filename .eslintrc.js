@@ -22,7 +22,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', '@emotion'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -32,6 +32,11 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 'off',
+    '@emotion/pkg-renaming': 'error',
+    '@emotion/jsx-import': 'error',
+    '@emotion/no-vanilla': 'error',
+    '@emotion/import-from-emotion': 'error',
+    '@emotion/styled-import': 'error',
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {

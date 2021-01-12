@@ -2,6 +2,7 @@ import H1 from './elements/H1';
 import P from './elements/P';
 import H3 from './elements/H3';
 import Link from './Link';
+import Image from 'next/image';
 
 const components = {
   h1: H1,
@@ -11,6 +12,7 @@ const components = {
   Link,
   H1,
   P,
+  img: Image,
 };
 
 export default components;

@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from '../styles/styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { State } from '../store';
 import { actions } from '../store/ui';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { C } from '../types/utils';
+import styled from '@emotion/styled';
 
 interface StyleProps {
   isOpen: boolean;

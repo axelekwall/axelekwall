@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
-import { styled } from '../styles/styled';
+import styled from '@emotion/styled';
 import { navigate } from 'gatsby';
 
 interface Props {

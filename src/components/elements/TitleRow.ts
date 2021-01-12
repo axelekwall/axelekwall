@@ -1,4 +1,4 @@
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
 
 interface TitleRowProps {
   main?: boolean;

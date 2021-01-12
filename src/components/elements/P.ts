@@ -1,4 +1,4 @@
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
 
 const P = styled.p`
   font-family: ${({ theme }): string => theme.fonts.sans};

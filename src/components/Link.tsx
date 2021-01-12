@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { Link as GLink, GatsbyLinkProps } from 'gatsby';
-import styled from '../styles/styled';
+import styled from '@emotion/styled';
+import { Font } from '../styles/theme';
 
 interface LinkProps {
-  font?: string;
+  font?: Font;
 }
 
 const StyledLink = styled.a<LinkProps>`

@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
-import styled from '../styles/styled';
 import Main from './elements/Main';
 import { State } from '../store';
 import { actions } from '../store/ui';
+import styled from '@emotion/styled';
 
 const MenuWrapper = styled.div`
   position: fixed;
