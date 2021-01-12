@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
-import Img, { FluidObject } from 'gatsby-image';
+import { FC, useState } from 'react';
 import styled from '@emotion/styled';
-import { navigate } from 'gatsby';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface Props {
-  img: FluidObject;
+  img: string;
   slug: string;
 }
 
@@ -48,6 +48,7 @@ const TextWrapper = styled.div<TextWrapperProps>`
 
 const ProfileCard: FC<Props> = ({ img, children, slug }) => {
   const [hover, setHover] = useState(false);
+  const router = useRouter();
   return (
     <Row
       onMouseEnter={(): void => {
@@ -57,11 +58,11 @@ const ProfileCard: FC<Props> = ({ img, children, slug }) => {
         setHover(false);
       }}
       onClick={(): void => {
-        navigate(slug);
+        router.push(slug);
       }}
     >
       <ImageWrapper>
-        <Img fluid={img}></Img>
+        <Image layout="fill" src={img} />
       </ImageWrapper>
       <TextWrapper hover={hover}>{children}</TextWrapper>
     </Row>

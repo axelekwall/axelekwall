@@ -1,10 +1,11 @@
-import React, { FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
 import Main from './elements/Main';
 import { State } from '../store';
 import { actions } from '../store/ui';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
 const MenuWrapper = styled.div`
   position: fixed;
@@ -42,13 +43,14 @@ const Ul = styled.ul`
 const Menu: FC = () => {
   const isOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   const dispatch = useDispatch();
+  const router = useRouter();
   const createNavigate = useCallback(
     (url: string, external = false) => (): void => {
       dispatch(actions.toggleMenu());
       if (external) {
         window.location.href = url;
       } else {
-        // navigate(url);
+        router.push(url);
       }
     },
     [dispatch]

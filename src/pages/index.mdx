@@ -15,3 +15,6 @@ Do you want to work with me? Send an email to **[hello@axelekwall.se](mailto:hel
 export const meta = {
   title: 'hello',
 };
+
+import Layout from '../components/Layout.tsx';
+export default (props) => <Layout title={meta.title} {...props} />;

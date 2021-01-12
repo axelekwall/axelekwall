@@ -7,3 +7,6 @@ You just hit a route that does not exist... the sadness.
 export const meta = {
   title: '404',
 };
+
+import Layout from '../components/Layout.tsx';
+export default (props) => <Layout title={meta.title} {...props} />;

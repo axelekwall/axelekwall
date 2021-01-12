@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { FC } from 'react';
 import Head from 'next/head';
 import Main from './elements/Main';
 import Page from './elements/Page';
@@ -6,15 +6,13 @@ import Menu from './Menu';
 import Footer from './Footer';
 import { useSelector } from 'react-redux';
 import { State } from '../store';
-import { C } from '../types/utils';
 
 interface LayoutProps {
-  children?: ReactNode;
   title?: string;
   description?: string;
 }
 
-const Layout: C<LayoutProps> = ({ title = 'axelekwall.se', children }) => {
+const Layout: FC<LayoutProps> = ({ title = 'axelekwall.se', children }) => {
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (
     <Page>
