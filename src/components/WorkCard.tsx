@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 interface Props {
-  img: string;
+  image: string;
   slug: string;
 }
 
@@ -46,7 +46,7 @@ const TextWrapper = styled.div<TextWrapperProps>`
   }
 `;
 
-const ProfileCard: FC<Props> = ({ img, children, slug }) => {
+const ProfileCard: FC<Props> = ({ image, children, slug }) => {
   const [hover, setHover] = useState(false);
   const router = useRouter();
   return (
@@ -62,7 +62,7 @@ const ProfileCard: FC<Props> = ({ img, children, slug }) => {
       }}
     >
       <ImageWrapper>
-        <Image layout="fill" src={img} />
+        <Image layout="responsive" width="800" height="600" src={image} />
       </ImageWrapper>
       <TextWrapper hover={hover}>{children}</TextWrapper>
     </Row>

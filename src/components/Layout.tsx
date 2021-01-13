@@ -7,17 +7,25 @@ import Footer from './Footer';
 import { useSelector } from 'react-redux';
 import { State } from '../store';
 
-interface LayoutProps {
+export interface Meta {
   title?: string;
   description?: string;
 }
 
-const Layout: FC<LayoutProps> = ({ title = 'axelekwall.se', children }) => {
+interface LayoutProps {
+  meta: Meta;
+}
+
+const Layout: FC<LayoutProps> = ({
+  meta: { title = 'axelekwall.se', description = '' },
+  children,
+}) => {
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (
     <Page>
       <Head>
         <title>{title}</title>
+        <link rel="shortcut icon" href="/media/a_e_logo.png" />
         <html lang="en" />
       </Head>
       {!menuOpen && <Main>{children}</Main>}

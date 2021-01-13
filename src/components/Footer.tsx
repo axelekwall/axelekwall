@@ -1,9 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { State } from '../store';
 import { actions } from '../store/ui';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { C } from '../types/utils';
 import styled from '@emotion/styled';
 
 interface StyleProps {
@@ -46,7 +45,7 @@ const FooterButton = styled.div<StyleProps>`
   }
 `;
 
-const Footer: C = () => {
+const Footer: FC = () => {
   const dispatch = useDispatch();
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (

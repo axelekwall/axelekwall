@@ -8,15 +8,15 @@ interface Props {
 
 export interface Work {
   slug: string;
-  img: string;
+  image: string;
   title: string;
 }
 
 const WorkList: FC<Props> = ({ work }) => {
   return (
     <div>
-      {work.map(({ slug, img, title }) => (
-        <WorkCard slug={slug} img={img} key={slug}>
+      {work.map(({ slug, image, title }) => (
+        <WorkCard slug={slug} image={image} key={slug}>
           <H1>{title}</H1>
         </WorkCard>
       ))}
