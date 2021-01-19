@@ -26,7 +26,6 @@ const Layout: FC<LayoutProps> = ({
       <Head>
         <title>{title}</title>
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
-        <html lang="en" />
       </Head>
       {!menuOpen && <Main>{children}</Main>}
       <Menu />

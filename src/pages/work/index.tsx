@@ -24,7 +24,6 @@ const WorkPage: FC<Props> = ({ work }) => (
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const dir = join(process.cwd(), './src/pages/work');
   const workList = fs.readdirSync(dir);
-  console.log(workList);
   const work = await Promise.all(
     workList
       .filter((slug) => slug.includes('.mdx'))

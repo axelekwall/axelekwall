@@ -25,8 +25,10 @@ const Row = styled.div`
 
 const ImageWrapper = styled.div`
   width: 50%;
-  max-width: 400px;
+  position: relative;
+  height: 125px;
   ${({ theme }): string => theme.media.phone} {
+    height: 200px;
     width: 100%;
   }
 `;
@@ -62,7 +64,12 @@ const ProfileCard: FC<Props> = ({ image, children, slug }) => {
       }}
     >
       <ImageWrapper>
-        <Image layout="responsive" width="800" height="600" src={image} />
+        <Image
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          src={image}
+        />
       </ImageWrapper>
       <TextWrapper hover={hover}>{children}</TextWrapper>
     </Row>

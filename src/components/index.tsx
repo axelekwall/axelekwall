@@ -5,9 +5,26 @@ import Link from './Link';
 import Image from 'next/image';
 import { FC } from 'react';
 import Layout from './Layout';
+import styled from '@emotion/styled';
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 400px;
+  ${({ theme }): string => theme.media.phone} {
+    height: 200px;
+  }
+`;
 
 const Img: FC<{ src: string; alt: string }> = (props) => (
-  <Image width="500" height="500" {...props} />
+  <ImageWrapper>
+    <Image
+      layout="fill"
+      objectPosition="center"
+      objectFit="contain"
+      {...props}
+    />
+  </ImageWrapper>
 );
 
 const components = {

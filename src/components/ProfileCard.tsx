@@ -38,7 +38,12 @@ const Text = styled.h3`
 const ProfileCard: FC = ({ children }) => (
   <Row>
     <ImageWrapper>
-      <Image layout="fill" src="/media/me_image.jpg" />
+      <Image
+        layout="responsive"
+        width="400"
+        height="400"
+        src="/media/me_image.jpg"
+      />
     </ImageWrapper>
     <TextWrapper>
       <Text>{children}</Text>
