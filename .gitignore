@@ -239,6 +239,5 @@ $RECYCLE.BIN/
 
 # Custom rules
 
-public
 .vercel
 .env*

@@ -1,15 +1,6 @@
-import React, { FC } from 'react';
-import Img, { FluidObject } from 'gatsby-image';
-import { styled } from '../styles/styled';
-import { useStaticQuery, graphql } from 'gatsby';
-
-interface Data {
-  file: {
-    childImageSharp: {
-      fluid: FluidObject;
-    };
-  };
-}
+import styled from '@emotion/styled';
+import Image from 'next/image';
+import { FC } from 'react';
 
 const Row = styled.div`
   margin: 25px 0;
@@ -44,31 +35,20 @@ const Text = styled.h3`
   font-family: ${({ theme }): string => theme.fonts['sans']};
 `;
 
-const ProfileCard: FC = ({ children }) => {
-  const data = useStaticQuery<Data>(graphql`
-    query IndexPage {
-      file(
-        relativePath: { eq: "me_image.jpg" }
-        sourceInstanceName: { eq: "media" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-  return (
-    <Row>
-      <ImageWrapper>
-        <Img fluid={data.file.childImageSharp.fluid}></Img>
-      </ImageWrapper>
-      <TextWrapper>
-        <Text>{children}</Text>
-      </TextWrapper>
-    </Row>
-  );
-};
+const ProfileCard: FC = ({ children }) => (
+  <Row>
+    <ImageWrapper>
+      <Image
+        layout="responsive"
+        width="400"
+        height="400"
+        src="/media/me_image.jpg"
+      />
+    </ImageWrapper>
+    <TextWrapper>
+      <Text>{children}</Text>
+    </TextWrapper>
+  </Row>
+);
 
 export default ProfileCard;

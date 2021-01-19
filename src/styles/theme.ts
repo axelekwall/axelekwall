@@ -1,14 +1,12 @@
-import { Theme, Media, Colors, Fonts } from '../types/utils';
-
 import { contentWidth } from '../config/siteConfig.js';
 
-const media: Media = {
+const media = {
   phone: '(max-width: 599px)',
   tablet: '(max-width: 959px)',
   laptop: '(max-width: 1439px)',
 };
 
-const colors: Colors = {
+const colors = {
   main: '#0d2b00',
   secondary: '#ffffff',
   'text-dark': '#ffffff',
@@ -16,13 +14,13 @@ const colors: Colors = {
   'background-light': '#ffffff',
 };
 
-const fonts: Fonts = {
+const fonts = {
   sans: "'IBM Plex Sans', sans-serif",
   serif: "'IBM Plex Serif', serif",
   mono: "'IBM Plex Mono', monospace",
 };
 
-const theme: Theme = {
+const theme = {
   fonts,
   media: {
     phone: `@media screen and ${media.phone}`,
@@ -33,6 +31,7 @@ const theme: Theme = {
   contentWidth: contentWidth + 'px',
 };
 
-export { media, colors, contentWidth, fonts };
+export type ThemeInterface = typeof theme;
+export type Font = keyof typeof fonts;
 
 export default theme;

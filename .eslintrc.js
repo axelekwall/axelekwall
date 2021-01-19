@@ -9,7 +9,7 @@ module.exports = {
   ],
   settings: {
     react: {
-      version: '16.10',
+      version: '17',
     },
     'import/resolver': {
       node: {
@@ -22,7 +22,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@emotion'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -31,7 +31,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    '@emotion/pkg-renaming': 'error',
+    '@emotion/jsx-import': 'error',
+    '@emotion/no-vanilla': 'error',
+    '@emotion/import-from-emotion': 'error',
+    '@emotion/styled-import': 'error',
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {

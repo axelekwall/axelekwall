@@ -1,7 +1,8 @@
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
+import { Font } from '../../styles/theme';
 
 interface H1Props {
-  font?: string;
+  font?: Font;
 }
 
 const H1 = styled.h1<H1Props>`
