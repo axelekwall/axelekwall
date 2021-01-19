@@ -14,11 +14,13 @@ export interface Meta {
 
 interface LayoutProps {
   meta: Meta;
+  disableTracking?: boolean;
 }
 
 const Layout: FC<LayoutProps> = ({
-  meta: { title = 'axelekwall.se', description = '' },
-  children,
+  meta: { title = 'axelekwall.se', description },
+  disableTracking = false,
+  ...props
 }) => {
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (
@@ -26,8 +28,17 @@ const Layout: FC<LayoutProps> = ({
       <Head>
         <title>{title}</title>
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
+        {description && <meta name="description" content={description} />}
+        {process.env.NODE_ENV === 'production' && !disableTracking && (
+          <script
+            async
+            defer
+            data-domain="axelekwall.se"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
+        )}
       </Head>
-      {!menuOpen && <Main>{children}</Main>}
+      {!menuOpen && <Main {...props} />}
       <Menu />
       <Footer />
     </Page>
