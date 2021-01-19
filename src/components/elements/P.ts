@@ -1,6 +1,8 @@
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
 
-const P = styled.p`
+// TODO: Change back to p element when next/image adds support for nesting inside p
+const P = styled.div`
+  padding: 16px 0;
   font-family: ${({ theme }): string => theme.fonts.sans};
   color: ${({ theme }): string => theme.colors['text-light']};
   line-height: 1.4;
