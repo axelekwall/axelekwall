@@ -11,6 +11,7 @@ export interface Meta {
   title?: string;
   description?: string;
   og?: {
+    title?: string;
     image?: string;
     description?: string;
   };
@@ -37,7 +38,7 @@ const Layout: FC<LayoutProps> = ({
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
         <meta name="description" content={description} />
         <meta key="og:type" property="og:type" content="website" />
-        <meta key="og:title" property="og:title" content={title} />
+        <meta key="og:title" property="og:title" content={og?.title || title} />
         <meta
           key="og:description"
           property="og:description"
