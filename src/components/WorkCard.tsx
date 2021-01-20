@@ -6,6 +6,7 @@ import Image from 'next/image';
 interface Props {
   image: string;
   slug: string;
+  alt?: string;
 }
 
 interface TextWrapperProps {
@@ -48,7 +49,7 @@ const TextWrapper = styled.div<TextWrapperProps>`
   }
 `;
 
-const ProfileCard: FC<Props> = ({ image, children, slug }) => {
+const WorkCard: FC<Props> = ({ image, children, slug, alt }) => {
   const [hover, setHover] = useState(false);
   const router = useRouter();
   return (
@@ -69,6 +70,7 @@ const ProfileCard: FC<Props> = ({ image, children, slug }) => {
           objectFit="cover"
           objectPosition="center"
           src={image}
+          alt={alt}
         />
       </ImageWrapper>
       <TextWrapper hover={hover}>{children}</TextWrapper>
@@ -76,4 +78,4 @@ const ProfileCard: FC<Props> = ({ image, children, slug }) => {
   );
 };
 
-export default ProfileCard;
+export default WorkCard;
