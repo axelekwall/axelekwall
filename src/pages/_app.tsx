@@ -5,7 +5,6 @@ import { ThemeProvider } from '@emotion/react';
 import { Provider } from 'react-redux';
 import store from '../store';
 import theme from '../styles/theme';
-
 import 'normalize.css';
 import '../styles/index.css';
 import components from '../components';
