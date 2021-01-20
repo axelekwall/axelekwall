@@ -44,7 +44,9 @@ const Layout: FC<LayoutProps> = ({
         />
         <meta
           property="og:image"
-          content={og?.image || '/media/me_image.jpg'}
+          content={`${process.env.VERCEL_URL}${
+            og?.image || '/media/me_image.jpg'
+          }`}
         />
         {process.env.NODE_ENV === 'production' && !disableTracking && (
           <script
