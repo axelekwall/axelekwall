@@ -17,8 +17,11 @@ interface LayoutProps {
   disableTracking?: boolean;
 }
 
+const defaultDescription =
+  'This is my personal site where I share my work with the world.';
+
 const Layout: FC<LayoutProps> = ({
-  meta: { title = 'axelekwall.se', description },
+  meta: { title = 'axelekwall.se', description = defaultDescription },
   disableTracking = false,
   ...props
 }) => {
@@ -28,7 +31,7 @@ const Layout: FC<LayoutProps> = ({
       <Head>
         <title>{title}</title>
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
-        {description && <meta name="description" content={description} />}
+        <meta name="description" content={description} />
         {process.env.NODE_ENV === 'production' && !disableTracking && (
           <script
             async

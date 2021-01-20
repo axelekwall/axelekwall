@@ -16,12 +16,14 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Img: FC<{ src: string; alt: string }> = (props) => (
+const Img: FC<{ src: string; alt: string }> = ({ src, alt, ...props }) => (
   <ImageWrapper>
     <Image
       layout="fill"
       objectPosition="center"
       objectFit="contain"
+      src={src}
+      alt={alt}
       {...props}
     />
   </ImageWrapper>

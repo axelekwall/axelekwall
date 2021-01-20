@@ -16,7 +16,12 @@ const WorkList: FC<Props> = ({ work }) => {
   return (
     <div>
       {work.map(({ slug, image, title }) => (
-        <WorkCard slug={slug} image={image} key={slug}>
+        <WorkCard
+          alt={`Thumbnail for the ${title} project`}
+          slug={slug}
+          image={image}
+          key={slug}
+        >
           <H1>{title}</H1>
         </WorkCard>
       ))}

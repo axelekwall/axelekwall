@@ -39,10 +39,12 @@ const ProfileCard: FC = ({ children }) => (
   <Row>
     <ImageWrapper>
       <Image
+        priority
         layout="responsive"
         width="400"
         height="400"
         src="/media/me_image.jpg"
+        alt="Picture of me"
       />
     </ImageWrapper>
     <TextWrapper>
