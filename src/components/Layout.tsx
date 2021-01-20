@@ -50,7 +50,7 @@ const Layout: FC<LayoutProps> = ({
             process.env.VERCEL_URL
               ? `https://${process.env.VERCEL_URL}`
               : 'http://localhost:3000'
-          }${og?.image || '/media/me_image.jpg'}`}
+          }${og?.image || '/media/a_e_logo.png'}`}
         />
         {process.env.NODE_ENV === 'production' && !disableTracking && (
           <script
