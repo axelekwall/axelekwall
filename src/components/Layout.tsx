@@ -10,6 +10,10 @@ import { State } from '../store';
 export interface Meta {
   title?: string;
   description?: string;
+  og?: {
+    image?: string;
+    description?: string;
+  };
 }
 
 interface LayoutProps {
@@ -21,7 +25,7 @@ const defaultDescription =
   'This is my personal site where I share my work with the world.';
 
 const Layout: FC<LayoutProps> = ({
-  meta: { title = 'axelekwall.se', description = defaultDescription },
+  meta: { title = 'axelekwall.se', description = defaultDescription, og },
   disableTracking = false,
   ...props
 }) => {
@@ -32,6 +36,16 @@ const Layout: FC<LayoutProps> = ({
         <title>{title}</title>
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
         <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content={og?.description || description}
+        />
+        <meta
+          property="og:image"
+          content={og?.image || '/media/me_image.jpg'}
+        />
         {process.env.NODE_ENV === 'production' && !disableTracking && (
           <script
             async
