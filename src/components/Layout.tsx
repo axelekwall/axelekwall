@@ -33,20 +33,24 @@ const Layout: FC<LayoutProps> = ({
   return (
     <Page>
       <Head>
-        <title>{title}</title>
+        <title key="title">{title}</title>
         <link rel="shortcut icon" href="/media/a_e_logo.png" />
         <meta name="description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta key="og:title" property="og:title" content={title} />
         <meta
+          key="og:description"
           property="og:description"
           content={og?.description || description}
         />
         <meta
+          key="og:image"
           property="og:image"
-          content={`${process.env.VERCEL_URL}${
-            og?.image || '/media/me_image.jpg'
-          }`}
+          content={`${
+            process.env.VERCEL_URL
+              ? `https://${process.env.VERCEL_URL}`
+              : 'http://localhost:3000'
+          }${og?.image || '/media/me_image.jpg'}`}
         />
         {process.env.NODE_ENV === 'production' && !disableTracking && (
           <script
