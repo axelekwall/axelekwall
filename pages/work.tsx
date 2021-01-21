@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import fs from 'fs';
-import Layout from '../components/Layout';
-import WorkList, { Work } from '../components/WorkList';
-import H1 from '../components/elements/H1';
-import P from '../components/elements/P';
-import Link from '../components/Link';
+import Layout from '../src/components/Layout';
+import WorkList, { Work } from '../src/components/WorkList';
+import H1 from '../src/components/elements/H1';
+import P from '../src/components/elements/P';
+import Link from '../src/components/Link';
 import { GetStaticProps } from 'next';
 import { join } from 'path';
 
@@ -22,7 +22,7 @@ const WorkPage: FC<Props> = ({ work }) => (
 );
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const dir = join(process.cwd(), './src/pages/work');
+  const dir = join(process.cwd(), './pages/work');
   const workList = fs.readdirSync(dir);
   const work = await Promise.all(
     workList.map(async (slug) => {
