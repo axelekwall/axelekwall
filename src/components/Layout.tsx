@@ -18,18 +18,25 @@ export interface Meta {
 }
 
 interface LayoutProps {
-  meta: Meta;
+  meta?: Meta;
   disableTracking?: boolean;
 }
 
-const defaultDescription =
-  'This is my personal site where I share my work with the world.';
+const defaultMeta: Meta = {
+  title: 'axelekwall.se',
+  description: 'This is my personal site where I share my work with the world.',
+};
 
 const Layout: FC<LayoutProps> = ({
-  meta: { title = 'axelekwall.se', description = defaultDescription, og },
+  meta = defaultMeta,
   disableTracking = false,
   ...props
 }) => {
+  const {
+    title = defaultMeta.title,
+    description = defaultMeta.description,
+    og,
+  } = meta;
   const menuOpen = useSelector<State, boolean>((state) => state.ui.menuOpen);
   return (
     <Page>
