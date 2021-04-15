@@ -40,6 +40,7 @@ const ProfileCard: FC = ({ children }) => (
     <ImageWrapper>
       <Image
         priority
+        sizes="(min-width: 0px) 400px"
         layout="responsive"
         width="400"
         height="400"

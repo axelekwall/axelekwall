@@ -66,6 +66,7 @@ const WorkCard: FC<Props> = ({ image, children, slug, alt }) => {
     >
       <ImageWrapper>
         <Image
+          sizes="(min-width: 0px) 500px"
           layout="fill"
           objectFit="cover"
           objectPosition="center"

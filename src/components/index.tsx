@@ -19,6 +19,7 @@ const ImageWrapper = styled.div`
 const Img: FC<{ src: string; alt: string }> = ({ src, alt, ...props }) => (
   <ImageWrapper>
     <Image
+      sizes="(min-width: 0px) 600px"
       layout="fill"
       objectPosition="center"
       objectFit="contain"
