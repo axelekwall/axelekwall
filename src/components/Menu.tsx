@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated } from '@react-spring/web';
 import Main from './elements/Main';
 import { State } from '../store';
 import { actions } from '../store/ui';
@@ -55,45 +55,43 @@ const Menu: FC = () => {
     },
     [dispatch]
   );
-  const transitions = useTransition(isOpen, null, {
+
+  const transitions = useTransition(isOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   });
-  return (
-    <>
-      {transitions.map(
-        ({ item, key, props }) =>
-          item && (
-            <animated.div key={key} style={props}>
-              <MenuWrapper>
-                <Main>
-                  <Ul>
-                    <Li onClick={createNavigate('/')}>me</Li>
-                    <Li onClick={createNavigate('/work')}>projects</Li>
-                    <Li
-                      onClick={createNavigate(
-                        'https://github.com/axelekwall',
-                        true
-                      )}
-                    >
-                      github
-                    </Li>
-                    <Li
-                      onClick={createNavigate(
-                        'https://www.linkedin.com/in/axelekwall/',
-                        true
-                      )}
-                    >
-                      linkedin
-                    </Li>
-                  </Ul>
-                </Main>
-              </MenuWrapper>
-            </animated.div>
-          )
-      )}
-    </>
+
+  return transitions(
+    (style, item) =>
+      item && (
+        <animated.div style={style}>
+          <MenuWrapper>
+            <Main>
+              <Ul>
+                <Li onClick={createNavigate('/')}>me</Li>
+                <Li onClick={createNavigate('/work')}>projects</Li>
+                <Li
+                  onClick={createNavigate(
+                    'https://github.com/axelekwall',
+                    true
+                  )}
+                >
+                  github
+                </Li>
+                <Li
+                  onClick={createNavigate(
+                    'https://www.linkedin.com/in/axelekwall/',
+                    true
+                  )}
+                >
+                  linkedin
+                </Li>
+              </Ul>
+            </Main>
+          </MenuWrapper>
+        </animated.div>
+      )
   );
 };
 
