@@ -45,14 +45,15 @@ const Menu: FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const createNavigate = useCallback(
-    (url: string, external = false) => (): void => {
-      dispatch(actions.toggleMenu());
-      if (external) {
-        window.location.href = url;
-      } else {
-        router.push(url);
-      }
-    },
+    (url: string, external = false) =>
+      (): void => {
+        dispatch(actions.toggleMenu());
+        if (external) {
+          window.location.href = url;
+        } else {
+          router.push(url);
+        }
+      },
     [dispatch]
   );
 
@@ -70,7 +71,8 @@ const Menu: FC = () => {
             <Main>
               <Ul>
                 <Li onClick={createNavigate('/')}>me</Li>
-                <Li onClick={createNavigate('/work')}>projects</Li>
+                {/* <Li onClick={createNavigate('/work')}>projects</Li> */}
+                <Li onClick={createNavigate('/work/thesis')}>thesis</Li>
                 <Li
                   onClick={createNavigate(
                     'https://github.com/axelekwall',
