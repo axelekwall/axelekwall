@@ -4,20 +4,20 @@
   "version": "0.0.0",
   "author": "axel ekwall <axel@minimize.se>",
   "dependencies": {
-    "@emotion/react": "^11.1.5",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^10.2.0",
-    "@react-spring/web": "^9.1.2",
-    "@reduxjs/toolkit": "^1.5.1",
-    "next": "^10.2.0",
+    "@next/mdx": "^11.0.1",
+    "@react-spring/web": "^9.2.4",
+    "@reduxjs/toolkit": "^1.6.1",
+    "next": "^11.0.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+    "redux": "^4.1.1"
   },
   "keywords": [
     "nextjs",
@@ -33,21 +33,22 @@
     "lint:fix": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --fix"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
+    "@babel/core": "^7.15.0",
     "@emotion/eslint-plugin": "^11.2.0",
-    "@types/mdx-js__react": "^1.5.3",
-    "@types/node": "^15.0.1",
-    "@types/react": "^17.0.4",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-redux": "^7.1.16",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "eslint": "^7.25.0",
+    "@types/mdx-js__react": "^1.5.4",
+    "@types/node": "^16.4.13",
+    "@types/react": "^17.0.16",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.18",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.4"
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   },
   "engines": {
     "node": "14.x"
