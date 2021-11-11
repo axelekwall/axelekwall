@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import { FC } from 'react';
+import ImgOfMe from '../assets/me_image.jpg';
 
 const Row = styled.div`
   margin: 25px 0;
@@ -14,7 +15,7 @@ const Row = styled.div`
 
 const ImageWrapper = styled.div`
   width: 50%;
-  max-width: 400px;
+  max-width: 500px;
   ${({ theme }): string => theme.media.phone} {
     width: 100%;
   }
@@ -39,12 +40,13 @@ const ProfileCard: FC = ({ children }) => (
   <Row>
     <ImageWrapper>
       <Image
+        placeholder="blur"
         priority
-        sizes="(min-width: 0px) 400px"
+        sizes="(min-width: 0px) 500px"
         layout="responsive"
-        width="400"
-        height="400"
-        src="/media/me_image.jpg"
+        width="500"
+        height="500"
+        src={ImgOfMe}
         alt="Picture of me"
       />
     </ImageWrapper>
