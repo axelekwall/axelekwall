@@ -1,7 +1,8 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { FComp } from '../types';
 
 interface Props {
   image: string;
@@ -49,7 +50,7 @@ const TextWrapper = styled.div<TextWrapperProps>`
   }
 `;
 
-const WorkCard: FC<Props> = ({ image, children, slug, alt }) => {
+const WorkCard: FComp<Props> = ({ image, children, slug, alt }) => {
   const [hover, setHover] = useState(false);
   const router = useRouter();
   return (

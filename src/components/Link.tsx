@@ -1,7 +1,7 @@
-import { FC } from 'react';
 import styled from '@emotion/styled';
 import { Font } from '../styles/theme';
 import NextLink from 'next/link';
+import { FComp } from '../types';
 
 interface LinkProps {
   font?: Font;
@@ -22,7 +22,7 @@ const StyledLink = styled.a<LinkProps>`
   text-decoration: underline;
 `;
 
-const Link: FC<Props> = ({ href, ...rest }) => (
+const Link: FComp<Props> = ({ href, ...rest }) => (
   <NextLink href={href} passHref>
     <StyledLink {...rest} />
   </NextLink>

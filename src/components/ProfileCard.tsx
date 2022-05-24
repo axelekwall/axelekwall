@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { FC } from 'react';
 import ImgOfMe from '../assets/me_image.jpg';
+import { FComp } from '../types';
 
 const Row = styled.div`
   margin: 25px 0;
@@ -36,7 +36,7 @@ const Text = styled.h3`
   font-family: ${({ theme }): string => theme.fonts['sans']};
 `;
 
-const ProfileCard: FC = ({ children }) => (
+const ProfileCard: FComp = ({ children }) => (
   <Row>
     <ImageWrapper>
       <Image

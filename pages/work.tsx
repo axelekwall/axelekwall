@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import fs from 'fs';
 import Layout from '../src/components/Layout';
 import WorkList, { Work } from '../src/components/WorkList';
@@ -7,12 +6,13 @@ import P from '../src/components/elements/P';
 import Link from '../src/components/Link';
 import { GetStaticProps } from 'next';
 import { join } from 'path';
+import { FComp } from '../src/types';
 
 interface Props {
   work: Array<Work>;
 }
 
-const WorkPage: FC<Props> = ({ work }) => (
+const WorkPage: FComp<Props> = ({ work }) => (
   <Layout meta={{ title: 'work' }}>
     <H1>work 🔨</H1>
     <P>This is a selection of projects I have been a part of.</P>

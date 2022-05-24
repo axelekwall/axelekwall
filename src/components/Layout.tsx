@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Head from 'next/head';
 import Main from './elements/Main';
 import Page from './elements/Page';
@@ -6,6 +5,7 @@ import Menu from './Menu';
 import Footer from './Footer';
 import { useSelector } from 'react-redux';
 import { State } from '../store';
+import { FComp } from '../types';
 
 export interface Meta {
   title?: string;
@@ -27,7 +27,7 @@ const defaultMeta: Meta = {
   description: 'This is my personal site where I share my work with the world.',
 };
 
-const Layout: FC<LayoutProps> = ({
+const Layout: FComp<LayoutProps> = ({
   meta = defaultMeta,
   disableTracking = false,
   ...props
