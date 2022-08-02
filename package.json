@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "serve": "^14.0.1"
   },
   "keywords": [
     "nextjs",
@@ -28,7 +29,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "prestart": "yarn export",
+    "start": "serve out",
+    "preexport": "yarn build",
+    "export": "next export",
     "lint": "next lint"
   },
   "devDependencies": {

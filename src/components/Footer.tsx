@@ -18,7 +18,6 @@ const FooterOuter = styled.footer`
   width: 100vw;
   height: 120px;
   background-color: transparent;
-  z-index: 100;
 `;
 
 const FooterInner = styled.nav`
@@ -40,6 +39,7 @@ const FooterButton = styled.div<StyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
   :hover {
     transform: scale(1.1);
   }
