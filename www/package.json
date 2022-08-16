@@ -9,11 +9,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.6.0",
-    "@astrojs/react": "^0.4.2",
-    "@astrojs/tailwind": "^0.2.5",
+    "@astrojs/mdx": "^0.9.0",
+    "@astrojs/react": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/typography": "^0.5.4",
-    "astro": "^1.0.0-rc.4",
+    "astro": "^1.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
