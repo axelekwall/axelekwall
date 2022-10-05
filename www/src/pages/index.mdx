@@ -1,0 +1,33 @@
+---
+layout: ../layouts/ArticleLayout.astro
+title: "axelekwall.se"
+---
+
+import { Image } from "@astrojs/image/components";
+import profileImage from "../assets/me_image.jpg";
+
+# hello friend 👋
+
+I'm Axel, a **Software Engineer** specialized in **human-computer interaction** and **information visualization**. I'm also a passionate **photographer**, a fan of the **open source community** and I love great **design**.
+
+<div className="my-6 flex sm:flex-row w-full flex-col-reverse">
+  <div className="sm:w-1/2 max-w-lg w-full">
+    <Image
+      className="w-full h-full object-cover object-center m-0"
+      src={profileImage}
+      width="512"
+      alt="Picture of me"
+    />
+  </div>
+  <div className="flex flex-row-reverse sm:flex-col-reverse px-0 sm:px-5 w-full">
+    <h3 className="font-sans">This is me.</h3>
+  </div>
+</div>
+
+Right now, I'm working as a **Tech Manager** and **Software Developer** at the code lab [Prototyp](https://www.prototyp.se/), building digital products and services with great user experience. 🎉
+
+During the spring of 2020, I did an internship as a **DevOps Engineer** at [Mentimeter](https://mentimeter.com) and wrote my [master's thesis](/thesis) on the topic **Technical Debt Management**.
+
+You can take a look at the code I write on my [**github**](https://github.com/axelekwall) and learn more about my background and experience on [**linkedin**](https://www.linkedin.com/in/axelekwall/).
+
+Do you want to contact me? Send an email to [**hey@axelekwall.se**](mailto:hey@axelekwall.se) 📬

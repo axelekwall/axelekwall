@@ -1,0 +1,40 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const defaults = {
+	title: 'axelekwall.se',
+	description: 'This is my personal site where I share my work with the world.',
+};
+
+const { title = defaults.title, description = defaults.description } = Astro.props.content || Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{title}</title>
+	<link rel="shortcut icon" href="/media/a_e_logo.png" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content={description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+</head>
+
+<body class="flex flex-row justify-center min-h-screen bg-white">
+	<main
+		class="flex flex-1 flex-col overflow-hidden w-full justify-start overflow-x-visible max-w-xl mb-40 mx-10 sm:mx-20 mt-40">
+		<slot />
+	</main>
+</body>
+
+</html>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,700|IBM+Plex+Serif:400,400i,700&display=swap');
+</style>
