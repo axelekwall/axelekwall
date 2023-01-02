@@ -9,18 +9,19 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.9.1",
-    "@astrojs/mdx": "^0.11.4",
+    "@astrojs/image": "^0.12.1",
+    "@astrojs/mdx": "^0.14.0",
     "@astrojs/react": "^1.1.4",
     "@astrojs/tailwind": "^2.0.2",
     "@tailwindcss/typography": "^0.5.7",
     "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.10",
     "astro": "^1.4.4",
     "postcss": "^8.4.17",
-    "sharp": ">=0.31.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "rollup": "^2.79.1",
+    "rollup": "^3.9.1",
+    "sharp": ">=0.31.0",
     "tailwindcss": "^3.1.8"
   }
 }
